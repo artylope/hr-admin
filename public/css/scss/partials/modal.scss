@@ -1,0 +1,63 @@
+.overlay{
+  position: fixed; /* Sit on top of the page content */
+  // display: none; /* Hidden by default */
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+
+  .modal{
+    height:700px;
+    width: 1200px;
+    background: white;
+    border-radius: 5px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-sm{
+    height:300px;
+    width: 600px;
+    background: white;
+    border-radius: 5px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .side-panel-container{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0); /* Black background with opacity */
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    display: flex;
+    justify-content: flex-end;
+
+    .side-panel{
+      height:100%;
+      width: 50%;
+      right: 0;
+      background: white;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
