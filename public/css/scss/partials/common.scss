@@ -1,6 +1,7 @@
 $background: #f1f3f5;
 $text: #334455;
 $primary: #745fb5;
+$secondary: #14af83;
 
 $table-white: #fff;
 $table-alt: #f8f9fa;
@@ -11,17 +12,21 @@ $table-header: #678;
 body{
   background: #f1f3f5;
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,h2,h3,h4,h5,h6{
   color: $primary;
+  font-weight: 500;
 }
 
 h1{
   font-size: 2.4rem;
-  margin-top: .5em;
-  margin-bottom: .2em;
 }
 
 h2{
@@ -52,11 +57,4 @@ a{
   &:hover{
     color: darken($primary, 10%);
   }
-}
-
-.container{
-  margin: 0 auto;
-  margin-left: 40px;
-  margin-right: 40px;
-  height: 100%;
 }
