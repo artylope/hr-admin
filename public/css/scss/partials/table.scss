@@ -12,6 +12,10 @@
     align-items: center;
     box-sizing: border-box;
 
+		.col{
+			padding-right: 1rem;
+			padding-left: 1rem;
+		}
 
 		.row {
       width: 100%;
@@ -20,6 +24,8 @@
       border-bottom: 1px solid #eee;
       box-sizing: border-box;
 			align-items: center;
+			display: flex;
+	    flex-direction: rows;
 		}
 
 		.row-header {
@@ -28,9 +34,11 @@
 			background: $table-alt;
 			height: 60px;
 			box-sizing: border-box;
-			align-items: center;
 			border-radius: 5px 5px 0 0;
 			font-weight: 600;
+			display: flex;
+	    flex-direction: rows;
+			align-items: center;
 		}
 
 		.row-bottom {
@@ -39,9 +47,12 @@
 			background: white;
 			height: 20px;
 			box-sizing: border-box;
-			align-items: center;
+
 			border-radius: 0px 0px 5px 5px;
 			font-weight: 600;
+			display: flex;
+	    flex-direction: rows;
+			align-items: center;
 		}
 
 	}

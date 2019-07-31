@@ -48,7 +48,7 @@ button {
   text-transform: uppercase;
   padding-left: 30px;
   padding-right: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -57,6 +57,9 @@ button {
   cursor: pointer; }
   button:hover {
     background: #4f3d85; }
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.5); }
 
 .wrapper {
   width: 96%; }
@@ -81,31 +84,40 @@ button {
     justify-content: center;
     align-items: center;
     box-sizing: border-box; }
+    .table-container .table .col {
+      padding-right: 1rem;
+      padding-left: 1rem; }
     .table-container .table .row {
       width: 100%;
       background: white;
       height: 50px;
       border-bottom: 1px solid #eee;
       box-sizing: border-box;
-      align-items: center; }
+      align-items: center;
+      display: flex;
+      flex-direction: rows; }
     .table-container .table .row-header {
       width: 100%;
       color: #678;
       background: #f8f9fa;
       height: 60px;
       box-sizing: border-box;
-      align-items: center;
       border-radius: 5px 5px 0 0;
-      font-weight: 600; }
+      font-weight: 600;
+      display: flex;
+      flex-direction: rows;
+      align-items: center; }
     .table-container .table .row-bottom {
       width: 100%;
       color: #678;
       background: white;
       height: 20px;
       box-sizing: border-box;
-      align-items: center;
       border-radius: 0px 0px 5px 5px;
-      font-weight: 600; }
+      font-weight: 600;
+      display: flex;
+      flex-direction: rows;
+      align-items: center; }
 
 header {
   width: 100%;
