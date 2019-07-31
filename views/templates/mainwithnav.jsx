@@ -18,7 +18,7 @@ class MainWithNav extends React.Component {
       <body>
         <header>
           <nav>
-            <div id="logo">HR PORTAL</div>
+            <div class="logo"><a href="/">HR PORTAL</a></div>
             <div id="nav-links">
               <ul>
                 <li>My Profile</li>

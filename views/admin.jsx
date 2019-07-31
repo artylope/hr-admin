@@ -3,9 +3,7 @@ const MainWithNav = require('./templates/mainwithnav.jsx');
 
 class Admin extends React.Component {
   render() {
-    console.log(this.props.employees);
-
-    const employeesList = this.props.employees.map((employee)=>{
+    const employeesList = this.props.employees.map( function(employee){
         var string = <div className="row">
                         <div className="col">{employee.id}</div>
                         <div className="col">{employee.name}</div>
@@ -37,6 +35,7 @@ class Admin extends React.Component {
                     </div>
                   </div>
                 </div>
+                {this.props.person[0].name}
         </MainWithNav>
     );
   }

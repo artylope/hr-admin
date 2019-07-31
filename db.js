@@ -65,6 +65,9 @@ pool.on('error', function (err) {
 const employeesModelsFunction = require('./models/employees');
 const employeesModelsObject = employeesModelsFunction( pool );
 
+const userModelsFunction = require('./models/user');
+const userModelsObject = userModelsFunction( pool );
+
 
 
 /*
@@ -88,5 +91,6 @@ module.exports = {
 
   // get a reference to end the connection pool at server end
   pool:pool,
-  employees: employeesModelsObject
+  employees: employeesModelsObject,
+  user: userModelsObject
 };
