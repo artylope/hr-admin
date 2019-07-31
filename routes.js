@@ -15,5 +15,5 @@ module.exports = (app, allModels) => {
   // require the controller
   const employeesControllerCallbacks = require('./controllers/employees')(allModels);
 
-  app.get('/employees', employeesControllerCallbacks.index);
+  app.get('/admin', employeesControllerCallbacks.employees);
 };

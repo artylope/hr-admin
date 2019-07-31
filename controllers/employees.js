@@ -6,14 +6,14 @@ module.exports = (db) => {
    * ===========================================
    */
 
-  let indexControllerCallback = function(request, response){
+  let employeesControllerCallback = function(request, response){
       db.employees.getAll(
         function (error, result){
           var data = {
             employees: result
           }
 
-        response.render('employees', data);
+        response.render('admin', data);
       });
   };
 
@@ -24,7 +24,7 @@ module.exports = (db) => {
    * ===========================================
    */
   return {
-    index: indexControllerCallback,
+    employees: employeesControllerCallback,
   };
 
 }
