@@ -38,6 +38,15 @@ a {
   a:hover {
     color: #5b479a; }
 
+.logo {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #745fb5;
+  text-transform: uppercase; }
+
+input[type=button],
+input[type=submit],
+input[type=reset],
 button {
   font-family: 'Darker Grotesque', sans-serif;
   font-size: 18px;
@@ -55,11 +64,30 @@ button {
   border: none;
   box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
   cursor: pointer; }
+  input[type=button]:hover,
+  input[type=submit]:hover,
+  input[type=reset]:hover,
   button:hover {
     background: #4f3d85; }
+  input[type=button]:focus,
+  input[type=submit]:focus,
+  input[type=reset]:focus,
   button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.5); }
+
+input[type=text] {
+  font-family: 'Darker Grotesque', sans-serif;
+  font-size: 18px;
+  border-radius: 3px;
+  border-style: none;
+  padding: 10px; }
+
+.input-group {
+  margin-bottom: 20px; }
+  .input-group p {
+    font-weight: 600;
+    margin-bottom: 10px; }
 
 .wrapper {
   width: 96%; }
@@ -135,11 +163,6 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  nav #logo {
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: #745fb5;
-    text-transform: uppercase; }
   nav #nav-links ul li {
     display: inline-block;
     margin-left: 10px;
@@ -213,3 +236,34 @@ nav {
       flex-direction: column;
       justify-content: center;
       align-items: center; }
+
+section.login {
+  font-size: 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row; }
+  section.login .hero {
+    width: 50%;
+    background: #745fb5; }
+  section.login .panel {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    section.login .panel form .logo {
+      font-size: 3.6rem;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 30px; }
+    section.login .panel form input[type=text] {
+      width: 320px; }
+    section.login .panel form .login-button {
+      margin-top: 30px; }

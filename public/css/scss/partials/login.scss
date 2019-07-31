@@ -1,0 +1,46 @@
+section{
+  &.login{
+      font-size: 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      .hero{
+        width: 50%;
+        background: $primary;
+      }
+      .panel{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        form{
+
+          .logo{
+            font-size: 3.6rem;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 30px;
+          }
+
+          input[type=text]{
+          	width: 320px;
+          }
+
+          .login-button{
+            margin-top: 30px;
+          }
+
+        }
+
+      }
+  }
+}

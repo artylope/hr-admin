@@ -58,3 +58,10 @@ a{
     color: darken($primary, 10%);
   }
 }
+
+.logo{
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: $primary;
+  text-transform: uppercase;
+}
