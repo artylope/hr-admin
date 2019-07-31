@@ -6,8 +6,6 @@ class Main extends React.Component {
     return (
       <html lang="en">
       <head>
-        <meta charset="utf-8"/>
-
         <title>HR Portal</title>
         <meta name="description" content="HR Portal"/>
         <meta name="author" content="Artylope"/>

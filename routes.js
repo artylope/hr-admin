@@ -7,6 +7,7 @@ module.exports = function (app, allModels){
   app.get('/', userController.indexRedirectHandler);
   app.get('/login', userController.loginRequestHandler);
   app.post('/login', userController.authenticateRequestHandler);
+  app.get('/logout', userController.logoutRequestHandler);
 
   app.get('/admin', employeesController.employeesRequestHandler);
 

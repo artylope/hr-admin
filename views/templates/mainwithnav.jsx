@@ -6,8 +6,6 @@ class MainWithNav extends React.Component {
     return (
       <html lang="en">
       <head>
-        <meta charset="utf-8"/>
-
         <title>HR Portal</title>
         <meta name="description" content="HR Portal"/>
         <meta name="author" content="Artylope"/>
@@ -18,7 +16,7 @@ class MainWithNav extends React.Component {
       <body>
         <header>
           <nav>
-            <div class="logo"><a href="/">HR PORTAL</a></div>
+            <div className="logo"><a href="/">HR PORTAL</a></div>
             <div id="nav-links">
               <ul>
                 <li>My Profile</li>
@@ -28,7 +26,7 @@ class MainWithNav extends React.Component {
                 <li>Salary</li>
                 <li>Security</li>
                 <li>Performance</li>
-                <li>Logout</li>
+                <li><a href="/logout">Logout</a></li>
               </ul>
             </div>
           </nav>
