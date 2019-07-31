@@ -1,4 +1,4 @@
-module.exports = (db) => {
+module.exports = function (db){
 
   /**
    * ===========================================
@@ -6,15 +6,16 @@ module.exports = (db) => {
    * ===========================================
    */
 
-  let employeesControllerCallback = function(request, response){
-      db.employees.getAll(
-        function (error, result){
-          var data = {
-            employees: result
-          }
+  let employeesRequestHandler = async function(request, response){
 
-        response.render('admin', data);
-      });
+      let employees = await db.employees.getAllEmployees();
+
+      var data = {
+            'employees': employees
+      }
+
+      response.render('admin', data);
+
   };
 
 
@@ -24,7 +25,7 @@ module.exports = (db) => {
    * ===========================================
    */
   return {
-    employees: employeesControllerCallback,
+    employeesRequestHandler
   };
 
 }

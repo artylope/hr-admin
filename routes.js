@@ -1,19 +1,6 @@
-module.exports = (app, allModels) => {
+module.exports = function (app, allModels){
 
+  const employeesController = require('./controllers/employees')(allModels);
 
-  /*
-   *  =========================================
-   *  =========================================
-   *  =========================================
-   *  =========================================
-   *    ALL ROUTES FOR EMPLOYEE CONTROLLER
-   *  =========================================
-   *  =========================================
-   *  =========================================
-   */
-
-  // require the controller
-  const employeesControllerCallbacks = require('./controllers/employees')(allModels);
-
-  app.get('/admin', employeesControllerCallbacks.employees);
+  app.get('/admin', employeesController.employeesRequestHandler);
 };

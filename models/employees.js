@@ -3,36 +3,22 @@
  * Export model functions as a module
  * ===========================================
  */
-module.exports = (dbPoolInstance) => {
+module.exports = function (dbPoolInstance){
 
   // `dbPoolInstance` is accessible within this function scope
 
-  let getAll = (callback) => {
+  let getAllEmployees = async function() {
+        try {      
+            const queryString = `SELECT * FROM employees`;
+            let result = await dbPoolInstance.query(queryString);
+            return result.rows;
 
-    let query = 'SELECT * FROM employees';
-
-    dbPoolInstance.query(query, (error, queryResult) => {
-      if( error ){
-
-        // invoke callback function with results after query has executed
-        callback(error, null);
-
-      }else{
-
-        // invoke callback function with results after query has executed
-
-        if( queryResult.rows.length > 0 ){
-          callback(null, queryResult.rows);
-
-        }else{
-          callback(null, null);
-
+        } catch(e) {
+            console.log('getAllEmployees: ' + e);
         }
-      }
-    });
-  };
+    };
 
   return {
-    getAll,
+    getAllEmployees
   };
 };
