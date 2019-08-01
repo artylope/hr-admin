@@ -9,10 +9,14 @@ module.exports = function (dbPoolInstance){
 
   let getAllEmployees = async function() {
         try {
-            const queryString = `SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name
-                                 FROM employees
-                                 INNER JOIN organisations
-                                 ON (employees.organisation_id = organisations.id)`;
+            const queryString = `
+                                SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name, manager_staff.manager_id
+                                FROM employees
+                                INNER JOIN organisations
+                                ON (employees.organisation_id = organisations.id)
+                                INNER JOIN manager_staff
+                                ON (employees.id = manager_staff.staff_id)
+                                `;
             let result = await dbPoolInstance.query(queryString);
             return result.rows;
 
@@ -26,15 +30,17 @@ module.exports = function (dbPoolInstance){
 
             const values = [userId];
             const queryString = `
-                                SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name
-                                FROM employees
-                                INNER JOIN organisations
-                                ON (employees.organisation_id = organisations.id)
-                                WHERE employees.id = $1
+                                  SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name, manager_staff.manager_id
+                                  FROM employees
+                                  INNER JOIN organisations
+                                  ON (employees.organisation_id = organisations.id)
+                                  INNER JOIN manager_staff
+                                  ON (employees.id = manager_staff.staff_id)
+                                  WHERE employees.id = $1
                                 `;
             let result = await dbPoolInstance.query( queryString, values);
-            console.log('get one employee');
-            console.log(result.rows);
+            // console.log('get one employee');
+            // console.log(result.rows);
             return result.rows;
 
         } catch(e) {
@@ -42,8 +48,27 @@ module.exports = function (dbPoolInstance){
         }
     };
 
+    let getManager = async function(managerId) {
+          try {
+
+              const values = [managerId];
+              const queryString = `
+                                  SELECT * FROM employees
+                                  WHERE id = $1
+                                  `;
+              let result = await dbPoolInstance.query( queryString, values);
+              // console.log('get one employee');
+              // console.log(result.rows);
+              return result.rows;
+
+          } catch(e) {
+              console.log('getManager: ' + e);
+          }
+      };
+
   return {
     getAllEmployees,
-    getOneEmployee
+    getOneEmployee,
+    getManager
   };
 };

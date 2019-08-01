@@ -23,17 +23,20 @@ module.exports = function (db){
     let userId = request.cookies.user_id;
     let loggedIn = request.cookies.logged_in;
 
-    console.log('user id');
-    console.log(userId);
-    console.log('is logged in?');
-    console.log(loggedIn);
+    // console.log('user id');
+    // console.log(userId);
+    // console.log('is logged in?');
+    // console.log(loggedIn);
 
       let user = await db.employees.getOneEmployee(userId);
-      // let boss = await db.employees.getBoss();
+      console.log(user);
+      let managerId = user[0].manager_id;
+      console.log(managerId);
+      let manager = await db.employees.getManager(managerId);
 
       var data = {
-            'user': user
-            // 'userBoss' : boss
+            'user': user,
+            'manager' : manager
       }
 
       response.render('home', data);

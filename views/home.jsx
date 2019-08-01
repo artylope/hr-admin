@@ -3,7 +3,8 @@ const MainWithNav = require('./templates/mainwithnav.jsx');
 
 class Home extends React.Component {
   render() {
-
+    console.log('in home');
+    console.log(this.props);
     return (
       <MainWithNav>
                 <div className="wrapper">
@@ -17,7 +18,7 @@ class Home extends React.Component {
                         Name: {this.props.user[0].staff_email}<br/>
                         Phone: {this.props.user[0].staff_phone}<br/>
                         Organisation: {this.props.user[0].organisation_name}<br/>
-                        Boss: here to get the boss
+                        Your Manager: {this.props.manager[0].staff_name}
                       </div>
                     </div>
                     <div className="col-thirds">
