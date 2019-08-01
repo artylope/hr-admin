@@ -7,21 +7,20 @@ module.exports = function (dbPoolInstance){
 
   // `dbPoolInstance` is accessible within this function scope
 
-  let submitLeave = async function() {
+  let submitLeave = async function(userId,leave) {
         try {
+            console.log('in submit leave model');
+            console.log(leave);
+            const values = [userId, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, 3, leave.request_status]
             const queryString = `
-                                SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name, manager_staff.manager_id
-                                FROM employees
-                                INNER JOIN organisations
-                                ON (employees.organisation_id = organisations.id)
-                                INNER JOIN manager_staff
-                                ON (employees.id = manager_staff.staff_id)
+                                  INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+                                  VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING ID;
                                 `;
-            let result = await dbPoolInstance.query(queryString);
+            let result = await dbPoolInstance.query(queryString,values);
             return result.rows;
 
         } catch(e) {
-            console.log('getAllEmployees: ' + e);
+            console.log('submit leave: ' + e);
         }
     };
 

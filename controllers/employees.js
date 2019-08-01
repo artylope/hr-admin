@@ -50,7 +50,12 @@ module.exports = function (db){
   };
 
   let submitLeaveRequestHandler = async function(request, response){
+      var leave = request.body;
+      var userId = request.cookies.user_id;
+      console.log('in submit leave controller');
+      console.log(leave);
 
+      await db.leave.submitLeave(userId,leave);
       response.send('yay');
 
   };

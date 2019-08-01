@@ -17,7 +17,7 @@ class ApplyLeave extends React.Component {
                       <form action="/applyleave" method="POST">
                         <div className="input-group">
                           <p>Manager</p>
-                          <input type="text" name="username" value="manager"/>
+                          <input type="text" name="manager_id" value="1"/>
                         </div>
                         <div className="input-group">
                           <p>Leave Type</p>

@@ -68,6 +68,9 @@ const employeesModelsObject = employeesModelsFunction( pool );
 const userModelsFunction = require('./models/user');
 const userModelsObject = userModelsFunction( pool );
 
+const leaveModelsFunction = require('./models/leave');
+const leaveModelsObject = leaveModelsFunction( pool );
+
 
 
 /*
@@ -92,5 +95,6 @@ module.exports = {
   // get a reference to end the connection pool at server end
   pool:pool,
   employees: employeesModelsObject,
-  user: userModelsObject
+  user: userModelsObject,
+  leave: leaveModelsObject
 };
