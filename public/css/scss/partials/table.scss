@@ -12,12 +12,12 @@
     align-items: center;
     box-sizing: border-box;
 
-		.col{
+		.table-col{
 			padding-right: 1rem;
 			padding-left: 1rem;
 		}
 
-		.row {
+		.table-row {
       width: 100%;
 			background: white;
 			height: 50px;
@@ -28,7 +28,7 @@
 	    flex-direction: rows;
 		}
 
-		.row-header {
+		.table-row-header {
 			width: 100%;
 			color: $table-header;
 			background: $table-alt;
@@ -41,7 +41,7 @@
 			align-items: center;
 		}
 
-		.row-bottom {
+		.table-row-bottom {
 			width: 100%;
 			color: $table-header;
 			background: white;

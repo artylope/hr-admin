@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:400,600,700&display=swap');
 
 @import "partials/common";
+@import "partials/grid";
 @import "partials/button";
 @import "partials/form";
-@import "partials/grid";
-@import "partials/directory";
 @import "partials/table";
-@import "partials/nav";
 @import "partials/modal";
-@import "partials/login";
+@import "partials/nav";
+
+@import "pages/admin";
+@import "pages/home";
+@import "pages/login";

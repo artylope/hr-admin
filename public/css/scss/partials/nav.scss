@@ -10,7 +10,7 @@ header{
 }
 
 nav{
-  width: 96%;
+  width: 95%;
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -23,16 +23,26 @@ nav{
         display: inline-block;
         margin-left: 10px;
         margin-right: 10px;
-        font-weight: 600;
-        color: $text;
+
+
+        a{
+          color: $text;
+          font-weight: 600;
+
+          &:hover{
+            color: $primary;
+          }
+          &.selected{
+            color: $primary;
+          }
+
+        }
 
         &:first-child{
           margin-left: 0;
         }
 
-        &.selected{
-          color: $primary;
-        }
+
 
         &:last-child{
           margin-right: 0;

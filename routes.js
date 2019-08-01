@@ -9,6 +9,7 @@ module.exports = function (app, allModels){
   app.post('/login', userController.authenticateRequestHandler);
   app.get('/logout', userController.logoutRequestHandler);
 
-  app.get('/admin', employeesController.employeesRequestHandler);
+  app.get('/home', employeesController.homeRequestHandler);
+  app.get('/admin', employeesController.adminRequestHandler);
 
 };

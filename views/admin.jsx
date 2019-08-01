@@ -5,12 +5,12 @@ class Admin extends React.Component {
   render() {
 
     const employeesList = this.props.employees.map(function(employee){
-        var string = <div className="row">
-                        <div className="col">{employee.id}</div>
-                        <div className="col">{employee.name}</div>
-                        <div className="col">{employee.phone}</div>
-                        <div className="col">{employee.email}</div>
-                        <div className="col">{employee.organisation}</div>
+        var string = <div className="table-row">
+                        <div className="table-col">{employee.id}</div>
+                        <div className="table-col">{employee.name}</div>
+                        <div className="table-col">{employee.phone}</div>
+                        <div className="table-col">{employee.email}</div>
+                        <div className="table-col">{employee.organisation}</div>
                       </div>;
         return string;
     });
@@ -23,17 +23,17 @@ class Admin extends React.Component {
                   </div>
                   <div className="table-container">
                     <div className="table">
-                      <div className="row row-header">
-                        <div className="col" >No.</div>
-                        <div className="col">Name</div>
-                        <div className="col">Phone</div>
-                        <div className="col">Email</div>
-                        <div className="col">Organisation</div>
+                      <div className="table-row table-row-header">
+                        <div className="table-col" >No.</div>
+                        <div className="table-col">Name</div>
+                        <div className="table-col">Phone</div>
+                        <div className="table-col">Email</div>
+                        <div className="table-col">Organisation</div>
                       </div>
 
                       {employeesList}
 
-                      <div className="row row-bottom">
+                      <div className="table-row table-row-bottom">
                       </div>
                     </div>
                   </div>

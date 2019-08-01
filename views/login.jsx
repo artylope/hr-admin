@@ -6,7 +6,9 @@ class Login extends React.Component {
     return (
       <Main>
         <section className="login">
-          <div className="hero">todo: add image</div>
+          <div className="hero">
+            {/*todo: add image*/}
+          </div>
           <div className="panel">
             <form action="/login" method="POST">
               <div className="logo">HR PORTAL</div>

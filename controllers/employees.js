@@ -6,17 +6,27 @@ module.exports = function (db){
    * ===========================================
    */
 
-  let employeesRequestHandler = async function(request, response){
+  let adminRequestHandler = async function(request, response){
 
       let employees = await db.employees.getAllEmployees();
-      let person = await db.employees.getOneEmployee();
 
       var data = {
             'employees': employees,
-            'person': person
       }
 
       response.render('admin', data);
+
+  };
+
+  let homeRequestHandler = async function(request, response){
+
+      let user = await db.employees.getOneEmployee();
+
+      var data = {
+            'user': user
+      }
+
+      response.render('home', data);
 
   };
 
@@ -27,7 +37,8 @@ module.exports = function (db){
    * ===========================================
    */
   return {
-    employeesRequestHandler
+    adminRequestHandler,
+    homeRequestHandler
   };
 
 }
