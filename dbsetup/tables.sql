@@ -2,10 +2,10 @@ CREATE TABLE IF NOT EXISTS employees (
     id SERIAL PRIMARY KEY,
     username TEXT,
     password TEXT,
-    name TEXT,
-    email TEXT,
-    phone TEXT,
-    organisation INTEGER
+    staff_name TEXT,
+    staff_email TEXT,
+    staff_phone TEXT,
+    organisation_id INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS manager_staff (
@@ -16,5 +16,5 @@ CREATE TABLE IF NOT EXISTS manager_staff (
 
 CREATE TABLE IF NOT EXISTS organisations (
     id SERIAL PRIMARY KEY,
-    name TEXT
+    organisation_name TEXT
 );

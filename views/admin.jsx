@@ -7,10 +7,10 @@ class Admin extends React.Component {
     const employeesList = this.props.employees.map(function(employee){
         var string = <div className="table-row">
                         <div className="table-col">{employee.id}</div>
-                        <div className="table-col">{employee.name}</div>
-                        <div className="table-col">{employee.phone}</div>
-                        <div className="table-col">{employee.email}</div>
-                        <div className="table-col">{employee.organisation}</div>
+                        <div className="table-col">{employee.staff_name}</div>
+                        <div className="table-col">{employee.staff_phone}</div>
+                        <div className="table-col">{employee.staff_email}</div>
+                        <div className="table-col">{employee.organisation_name}</div>
                       </div>;
         return string;
     });

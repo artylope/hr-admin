@@ -29,7 +29,7 @@ module.exports = function (db){
 
       if (helper.checkCookiesForLogin(request.cookies) === true) {
           console.log(request.cookies);
-          response.redirect('/admin');
+          response.redirect('/home');
       } else {
           response.render('login');
       }
@@ -48,7 +48,7 @@ module.exports = function (db){
           response.cookie('username', result[0].username);
           response.cookie('user_id', result[0].id);
           response.cookie('logged_in', true);
-          response.redirect('/admin');
+          response.redirect('/home');
       } else {
           response.send('Login Failure');
       }
@@ -57,8 +57,8 @@ module.exports = function (db){
 
   let logoutRequestHandler = function(request, response){
 
-    console.log('in logoutRequestHandler ');
-    console.log(request.cookies);
+    // console.log('in logoutRequestHandler ');
+    // console.log(request.cookies);
 
     //todo: fix cookie, cookie does not clear at the moment
     if (helper.checkCookiesForLogin(request.cookies) === true) {

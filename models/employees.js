@@ -9,7 +9,10 @@ module.exports = function (dbPoolInstance){
 
   let getAllEmployees = async function() {
         try {
-            const queryString = `SELECT * FROM employees`;
+            const queryString = `SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name
+                                 FROM employees
+                                 INNER JOIN organisations
+                                 ON (employees.organisation_id = organisations.id)`;
             let result = await dbPoolInstance.query(queryString);
             return result.rows;
 
@@ -18,13 +21,20 @@ module.exports = function (dbPoolInstance){
         }
     };
 
-  let getOneEmployee = async function(input) {
+  let getOneEmployee = async function(userId) {
         try {
 
-            const values = [1];
-            const queryString = `SELECT * FROM employees
-                                WHERE id = $1`;
+            const values = [userId];
+            const queryString = `
+                                SELECT employees.id, employees.staff_name, employees.staff_phone, employees.staff_email, employees.organisation_id, organisations.organisation_name
+                                FROM employees
+                                INNER JOIN organisations
+                                ON (employees.organisation_id = organisations.id)
+                                WHERE employees.id = $1
+                                `;
             let result = await dbPoolInstance.query( queryString, values);
+            console.log('get one employee');
+            console.log(result.rows);
             return result.rows;
 
         } catch(e) {

@@ -8,17 +8,16 @@ class Home extends React.Component {
       <MainWithNav>
                 <div className="wrapper">
                   <div className="title">
-                    <h1>Welcome back, {this.props.user[0].name}</h1>
+                    <h1>Welcome back, {this.props.user[0].staff_name}</h1>
                   </div>
                   <div className="row">
                     <div className="col-thirds">
                       <div className="card">
                         <h2>Your Details</h2>
-                        {this.props.user[0].email}<br/>
-                        {this.props.user[0].phone}<br/>
-                        {this.props.user[0].organisation}<br/>
-                        here to get the organisation in text<br/>
-                        here to get the boss
+                        Name: {this.props.user[0].staff_email}<br/>
+                        Phone: {this.props.user[0].staff_phone}<br/>
+                        Organisation: {this.props.user[0].organisation_name}<br/>
+                        Boss: here to get the boss
                       </div>
                     </div>
                     <div className="col-thirds">
