@@ -18,3 +18,14 @@ CREATE TABLE IF NOT EXISTS organisations (
     id SERIAL PRIMARY KEY,
     organisation_name TEXT
 );
+
+CREATE TABLE IF NOT EXISTS leave (
+    id SERIAL PRIMARY KEY,
+    staff_id INTEGER,
+    leave_type TEXT,
+    manager_id INTEGER,
+    date_start DATE,
+    date_end DATE,
+    days_count FLOAT,
+    request_status TEXT,
+);

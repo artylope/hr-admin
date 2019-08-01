@@ -12,4 +12,6 @@ module.exports = function (app, allModels){
   app.get('/home', employeesController.homeRequestHandler);
   app.get('/admin', employeesController.adminRequestHandler);
 
+  app.get('/applyleave', employeesController.applyLeaveRequestHandler);
+
 };

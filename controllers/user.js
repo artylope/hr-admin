@@ -16,7 +16,8 @@ module.exports = function (db){
 
        if (helper.checkCookiesForLogin(request.cookies) === true) {
            console.log(request.cookies);
-           response.render('admin');
+
+           response.redirect('/home');
        } else {
            response.redirect('/login');
        }

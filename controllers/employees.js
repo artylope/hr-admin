@@ -43,6 +43,12 @@ module.exports = function (db){
 
   };
 
+  let applyLeaveRequestHandler = async function(request, response){
+
+      response.render('ApplyLeave');
+
+  };
+
 
   /**
    * ===========================================
@@ -51,7 +57,8 @@ module.exports = function (db){
    */
   return {
     adminRequestHandler,
-    homeRequestHandler
+    homeRequestHandler,
+    applyLeaveRequestHandler
   };
 
 }

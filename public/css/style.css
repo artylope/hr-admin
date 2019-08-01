@@ -2,7 +2,7 @@
 body {
   background: #f1f3f5;
   font-family: 'Darker Grotesque', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -106,6 +106,16 @@ button {
   button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.5); }
+  input[type=button] a,
+  input[type=submit] a,
+  input[type=reset] a,
+  button a {
+    color: white; }
+    input[type=button] a:hover,
+    input[type=submit] a:hover,
+    input[type=reset] a:hover,
+    button a:hover {
+      color: white; }
 
 input[type=text] {
   font-family: 'Darker Grotesque', sans-serif;
@@ -195,8 +205,9 @@ input[type=text] {
     z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px; }
   .overlay .modal-sm {
     height: 300px;
     width: 600px;
