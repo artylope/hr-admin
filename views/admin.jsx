@@ -6,11 +6,11 @@ class Admin extends React.Component {
 
     const employeesList = this.props.employees.map(function(employee){
         var string = <div className="table-row">
-                        <div className="table-col">{employee.id}</div>
-                        <div className="table-col">{employee.staff_name}</div>
-                        <div className="table-col">{employee.staff_phone}</div>
-                        <div className="table-col">{employee.staff_email}</div>
-                        <div className="table-col">{employee.organisation_name}</div>
+                        <div className="table-col flex-basis-2">{employee.id}</div>
+                        <div className="table-col flex-basis-10">{employee.staff_name}</div>
+                        <div className="table-col flex-basis-10">{employee.staff_phone}</div>
+                        <div className="table-col flex-basis-15">{employee.staff_email}</div>
+                        <div className="table-col flex-basis-10">{employee.organisation_name}</div>
                       </div>;
         return string;
     });
@@ -24,11 +24,11 @@ class Admin extends React.Component {
                   <div className="table-container">
                     <div className="table">
                       <div className="table-row table-row-header">
-                        <div className="table-col" >No.</div>
-                        <div className="table-col">Name</div>
-                        <div className="table-col">Phone</div>
-                        <div className="table-col">Email</div>
-                        <div className="table-col">Organisation</div>
+                        <div className="table-col flex-basis-2" >No.</div>
+                        <div className="table-col flex-basis-10">Name</div>
+                        <div className="table-col flex-basis-10">Phone</div>
+                        <div className="table-col flex-basis-15">Email</div>
+                        <div className="table-col flex-basis-10">Organisation</div>
                       </div>
 
                       {employeesList}

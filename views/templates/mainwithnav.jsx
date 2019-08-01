@@ -22,11 +22,11 @@ class MainWithNav extends React.Component {
               <ul>
                 <li><a href="/home">Home</a></li>
                 <li><a href="/admin">Directory</a></li>
-                <li><a href="#">Leave</a></li>
+                {/*<li><a href="#">Leave</a></li>
                 <li><a href="#">Claims</a></li>
                 <li><a href="#">Salary</a></li>
                 <li><a href="#">Security</a></li>
-                <li><a href="#">Performance</a></li>
+                <li><a href="#">Performance</a></li>*/}
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </div>
