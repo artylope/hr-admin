@@ -14,6 +14,34 @@ class ApplyLeave extends React.Component {
                     <div class="modal">
                       <a href="/home">Close</a>
                       <h1>Apply Leave</h1>
+                      <form action="/applyleave" method="POST">
+                        <div className="input-group">
+                          <p>Manager</p>
+                          <input type="text" name="username" value="manager"/>
+                        </div>
+                        <div className="input-group">
+                          <p>Leave Type</p>
+                          <select name="leave_type">
+                            <option value="annual leave">Annual Leave</option>
+                            <option value="no pay leave">No Pay Leave</option>
+                            <option value="maternity leave">Maternity Leave</option>
+                            <option value="medical leave">Medical Leave</option>
+                            <option value="child care leave">Child Care Leave</option>
+                          </select>
+                        </div>
+                        <div className="input-group">
+                          <p>Start Date</p>
+                          <input type="date" name="date_start"/>
+                        </div>
+                        <div className="input-group">
+                          <p>End Date</p>
+                          <input type="date" name="date_end"/>
+                        </div>
+                        <div className="input-group">
+                          <input hidden type="text" name="request_status" value="submitted"/>
+                        </div>
+                        <input className="button" type="submit" value="Apply"/>
+                      </form>
                     </div>
                   </div>
                 </div>

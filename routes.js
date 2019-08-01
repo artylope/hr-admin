@@ -13,5 +13,6 @@ module.exports = function (app, allModels){
   app.get('/admin', employeesController.adminRequestHandler);
 
   app.get('/applyleave', employeesController.applyLeaveRequestHandler);
+  app.post('/applyleave', employeesController.submitLeaveRequestHandler);
 
 };

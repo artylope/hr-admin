@@ -49,6 +49,12 @@ module.exports = function (db){
 
   };
 
+  let submitLeaveRequestHandler = async function(request, response){
+
+      response.send('yay');
+
+  };
+
 
   /**
    * ===========================================
@@ -58,7 +64,8 @@ module.exports = function (db){
   return {
     adminRequestHandler,
     homeRequestHandler,
-    applyLeaveRequestHandler
+    applyLeaveRequestHandler,
+    submitLeaveRequestHandler
   };
 
 }
