@@ -34,6 +34,8 @@ module.exports = function (db){
       console.log(managerId);
       let manager = await db.employees.getManager(managerId);
 
+      response.cookie('manager_id', managerId);
+
       var data = {
             'user': user,
             'manager' : manager
@@ -45,17 +47,27 @@ module.exports = function (db){
 
   let applyLeaveRequestHandler = async function(request, response){
 
-      response.render('ApplyLeave');
+      let userId = request.cookies.user_id;
+      let managerId = request.cookies.manager_id;
+      let manager = await db.employees.getManager(managerId);
+
+      var data = {
+            'userId': userId,
+            'manager' : manager
+      }
+
+      response.render('ApplyLeave',data);
 
   };
 
   let submitLeaveRequestHandler = async function(request, response){
       var leave = request.body;
       var userId = request.cookies.user_id;
+      var managerId = request.cookies.manager_id;
       console.log('in submit leave controller');
       console.log(leave);
 
-      await db.leave.submitLeave(userId,leave);
+      await db.leave.submitLeave(userId,managerId,leave);
       response.send('yay');
 
   };

@@ -66,6 +66,7 @@ module.exports = function (db){
       response.clearCookie('username');
       response.clearCookie('logged_in');
       response.clearCookie('user_id');
+      response.clearCookie('manager_id');
     }
 
     response.redirect('/login');

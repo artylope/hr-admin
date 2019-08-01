@@ -3,6 +3,8 @@ const MainWithNav = require('./templates/mainwithnav.jsx');
 
 class ApplyLeave extends React.Component {
   render() {
+    console.log('in apply leave form');
+    console.log(this.props);
 
     return (
       <MainWithNav>
@@ -16,8 +18,8 @@ class ApplyLeave extends React.Component {
                       <h1>Apply Leave</h1>
                       <form action="/applyleave" method="POST">
                         <div className="input-group">
-                          <p>Manager</p>
-                          <input type="text" name="manager_id" value="1"/>
+                          <p>Manager: {this.props.manager[0].staff_name}</p>
+
                         </div>
                         <div className="input-group">
                           <p>Leave Type</p>
