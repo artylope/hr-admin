@@ -28,20 +28,27 @@ module.exports = function (db){
     // console.log('is logged in?');
     // console.log(loggedIn);
 
-      let user = await db.employees.getOneEmployee(userId);
-      console.log(user);
-      let managerId = user[0].manager_id;
-      console.log(managerId);
-      let manager = await db.employees.getManager(managerId);
+    //get your own info
+    let user = await db.employees.getOneEmployee(userId);
+    console.log(user);
+    let managerId = user[0].manager_id;
 
-      response.cookie('manager_id', managerId);
+    //get your manager name
+    console.log(managerId);
+    let manager = await db.employees.getManager(managerId);
 
-      var data = {
-            'user': user,
-            'manager' : manager
-      }
+    //get a list of leave that you need to approve
+    let leaveToApprove = await db.leave.leaveToApprove(userId);
 
-      response.render('home', data);
+    response.cookie('manager_id', managerId);
+
+    var data = {
+          'user': user,
+          'manager' : manager,
+          'leaveToApprove' : leaveToApprove
+    }
+
+    response.render('home', data);
 
   };
 

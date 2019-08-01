@@ -5,6 +5,21 @@ class Home extends React.Component {
   render() {
     console.log('in home');
     console.log(this.props);
+
+    const leaveToApproveList = this.props.leaveToApprove.map(function(leave){
+        var string = <div className="table-row">
+                        <div className="table-col">{leave.id}</div>
+                        <div className="table-col">{leave.staff_id}</div>
+                        <div className="table-col">{leave.leave_type}</div>
+                        <div className="table-col">{leave.manager_id}</div>
+                        {/*<div className="table-col">{leave.date_start}</div>
+                        <div className="table-col">{leave.date_end}</div>*/}
+                        <div className="table-col">{leave.date_count}</div>
+                        <div className="table-col"><a>View Request</a></div>
+                      </div>;
+        return string;
+    });
+
     return (
       <MainWithNav>
                 <div className="wrapper">
@@ -31,8 +46,25 @@ class Home extends React.Component {
                     <div className="col-thirds">
                       <div className="card">
                         <h2>Requires Your Attention</h2>
-                        Staff's Leave application Pending <br/>
-                        Staff's Leave application Pending <br/>
+
+                        <div className="table-container">
+                          <div className="table">
+                            <div className="table-row table-row-header">
+                              <div className="table-col">Leave Type</div>
+                              <div className="table-col">Manager ID</div>
+                              <div className="table-col">Start Date</div>
+                              <div className="table-col">End Date</div>
+                              <div className="table-col">Days Count</div>
+                              <div className="table-col">Actions</div>
+                            </div>
+
+                            {leaveToApproveList}
+
+                            <div className="table-row table-row-bottom">
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                   </div>
