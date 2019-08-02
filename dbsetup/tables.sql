@@ -29,5 +29,6 @@ CREATE TABLE IF NOT EXISTS leave (
     date_end DATE,
     days_count FLOAT,
     request_status TEXT,
-    created_at TIMESTAMP
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
 );
