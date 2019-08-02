@@ -16,7 +16,7 @@ module.exports = function (app, allModels){
   app.get('/applyleave', leaveController.applyLeaveRequestHandler);
   app.post('/applyleave', leaveController.submitLeaveRequestHandler);
 
-  app.get('/viewleave', leaveController.viewLeaveRequestHandler);
+  app.get('/viewleave/:id', leaveController.viewLeaveRequestHandler);
   app.put('/home', leaveController.reviewLeaveHandler);
 
 };

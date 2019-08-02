@@ -6,6 +6,9 @@ class Home extends React.Component {
     console.log('in home');
     console.log(this.props);
 
+    {/*var leaveToApproveURL = '/viewleave/' + this.props.leaveToApprove.id;
+    var leaveAppliedURL = '/viewleave/' + this.props.leaveApplied.id;*/}
+
     const leaveToApproveList = this.props.leaveToApprove.map(function(leave){
         var string = <div className="table-row leave-to-approve">
                         <div className="table-col">{leave.id}</div>
@@ -15,7 +18,7 @@ class Home extends React.Component {
                         <div className="table-col">Start Date</div>
                         <div className="table-col">End Date</div>
                         <div className="table-col">{leave.days_count}</div>
-                        <div className="table-col"><a href="/viewleave">View Request</a></div>
+                        <div className="table-col"><a href='' >View Request</a></div>
                       </div>;
         return string;
     });
@@ -29,7 +32,7 @@ class Home extends React.Component {
                         <div className="table-col">Start Date</div>
                         <div className="table-col">End Date</div>
                         <div className="table-col">{leave.days_count}</div>
-                        <div className="table-col"><a href="/viewleave">View Request</a></div>
+                        <div className="table-col"><a href='' >View Request</a></div>
                       </div>;
         return string;
     });

@@ -36,7 +36,15 @@ module.exports = function (db){
 
   let viewLeaveRequestHandler = async function(request, response){
 
-      response.render('viewleave');
+      var leaveId = request.params.id;
+      // var leaveId = 1;
+      var leaveDetails = await db.leave.getSingleLeaveDetails(leaveId);
+
+      var data = {
+        'leaveDetails' : leaveDetails
+      }
+
+      response.render('viewleave', data);
 
   };
 
