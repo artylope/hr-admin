@@ -1,4 +1,6 @@
 module.exports.checkCookiesForLogin = function (cookies) {
+
+  try {
     // console.log('what is in my cookies');
     // console.log(cookies);
 
@@ -8,5 +10,8 @@ module.exports.checkCookiesForLogin = function (cookies) {
     } else {
       return false;
     }
+  } catch(e) {
+      console.log('checkCookiesForLogin: ' + e);
+  }
 
 }

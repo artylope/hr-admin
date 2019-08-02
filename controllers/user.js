@@ -18,7 +18,7 @@ module.exports = function (db){
        }
 
      } catch(e) {
-         console.log('blah blah: ' + e);
+         console.log('indexRedirectHandler: ' + e);
      }
 
    };
@@ -36,7 +36,7 @@ module.exports = function (db){
         }
 
       } catch(e) {
-          console.log('blah blah: ' + e);
+          console.log('loginRequestHandler : ' + e);
       }
 
 
@@ -60,7 +60,7 @@ module.exports = function (db){
               response.send('Login Failure');
           }
       } catch(e) {
-          console.log('blah blah: ' + e);
+          console.log('authenticateRequestHandler: ' + e);
       }
 
 
@@ -83,7 +83,7 @@ module.exports = function (db){
         response.redirect('/login');
 
       } catch(e) {
-          console.log('blah blah: ' + e);
+          console.log('logoutRequestHandler: ' + e);
       }
 
   }
