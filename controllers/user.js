@@ -8,12 +8,7 @@ module.exports = function (db){
    * ===========================================
    */
    let indexRedirectHandler = async function(request, response){
-
-       //if cookie says user is logged in,
-       //redirect to profile
-       //else
-       //redirect to login
-
+     try {
        if (helper.checkCookiesForLogin(request.cookies) === true) {
            console.log(request.cookies);
 
@@ -22,54 +17,75 @@ module.exports = function (db){
            response.redirect('/login');
        }
 
+     } catch(e) {
+         console.log('blah blah: ' + e);
+     }
 
    };
 
   let loginRequestHandler = async function(request, response){
-      response.render('login');
+      try {
 
-      if (helper.checkCookiesForLogin(request.cookies) === true) {
-          console.log(request.cookies);
-          response.redirect('/home');
-      } else {
-          response.render('login');
+        response.render('login');
+
+        if (helper.checkCookiesForLogin(request.cookies) === true) {
+            console.log(request.cookies);
+            response.redirect('/home');
+        } else {
+            response.render('login');
+        }
+
+      } catch(e) {
+          console.log('blah blah: ' + e);
       }
+
+
   };
 
   let authenticateRequestHandler = async function(request, response){
+      try {
+          let input = request.body;
+          let result = await db.user.authenticateUser(input.username, input.password);
+          // console.log('input');
+          // console.log(input);
+          // console.log('result');
+          // console.log(result);
 
-      let input = request.body;
-      let result = await db.user.authenticateUser(input.username, input.password);
-      // console.log('input');
-      // console.log(input);
-      // console.log('result');
-      // console.log(result);
-
-      if (result.length === 1) {
-          response.cookie('username', result[0].username);
-          response.cookie('user_id', result[0].id);
-          response.cookie('logged_in', true);
-          response.redirect('/home');
-      } else {
-          response.send('Login Failure');
+          if (result.length === 1) {
+              response.cookie('username', result[0].username);
+              response.cookie('user_id', result[0].id);
+              response.cookie('logged_in', true);
+              response.redirect('/home');
+          } else {
+              response.send('Login Failure');
+          }
+      } catch(e) {
+          console.log('blah blah: ' + e);
       }
+
 
   };
 
   let logoutRequestHandler = function(request, response){
+      try {
 
-    // console.log('in logoutRequestHandler ');
-    // console.log(request.cookies);
+        // console.log('in logoutRequestHandler ');
+        // console.log(request.cookies);
 
-    //todo: fix cookie, cookie does not clear at the moment
-    if (helper.checkCookiesForLogin(request.cookies) === true) {
-      response.clearCookie('username');
-      response.clearCookie('logged_in');
-      response.clearCookie('user_id');
-      response.clearCookie('manager_id');
-    }
+        //todo: fix cookie, cookie does not clear at the moment
+        if (helper.checkCookiesForLogin(request.cookies) === true) {
+          response.clearCookie('username');
+          response.clearCookie('logged_in');
+          response.clearCookie('user_id');
+          response.clearCookie('manager_id');
+        }
 
-    response.redirect('/login');
+        response.redirect('/login');
+
+      } catch(e) {
+          console.log('blah blah: ' + e);
+      }
+
   }
 
   /**

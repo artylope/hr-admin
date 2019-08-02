@@ -12,8 +12,8 @@ class ViewLeave extends React.Component {
                   <div className="title">
                     <h1>Directory</h1><button>Add Employee</button>
                   </div>
-                  <div class="overlay">
-                    <div class="modal">
+                  <div className="overlay">
+                    <div className="modal">
                       <a href="/home">Close</a>
                       <h1>Review Leave</h1>
 

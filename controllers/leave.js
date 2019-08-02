@@ -7,50 +7,65 @@ module.exports = function (db){
    */
 
   let applyLeaveRequestHandler = async function(request, response){
+      try {
+          let userId = request.cookies.user_id;
+          let managerId = request.cookies.manager_id;
+          let manager = await db.employees.getManager(managerId);
 
-      let userId = request.cookies.user_id;
-      let managerId = request.cookies.manager_id;
-      let manager = await db.employees.getManager(managerId);
+          var data = {
+                'userId': userId,
+                'manager' : manager
+          }
 
-      var data = {
-            'userId': userId,
-            'manager' : manager
+          response.render('ApplyLeave',data);
+      } catch(e) {
+          console.log('applyLeaveRequestHandler: ' + e);
       }
-
-      response.render('ApplyLeave',data);
 
   };
 
   let submitLeaveRequestHandler = async function(request, response){
-      var leave = request.body;
-      var userId = request.cookies.user_id;
-      var managerId = request.cookies.manager_id;
-      console.log('in submit leave controller');
-      console.log(leave);
+      try {
+          var leave = request.body;
+          var userId = request.cookies.user_id;
+          var managerId = request.cookies.manager_id;
+          console.log('in submit leave controller');
+          console.log(leave);
 
-      await db.leave.submitLeave(userId,managerId,leave);
-      response.send('yay');
+          await db.leave.submitLeave(userId,managerId,leave);
+          response.send('yay');
+
+      } catch(e) {
+          console.log('submitLeaveRequestHandler: ' + e);
+      }
 
   };
 
 
   let viewLeaveRequestHandler = async function(request, response){
+      try {
+          var leaveId = request.params.id;
+          // var leaveId = 1;
+          var leaveDetails = await db.leave.getSingleLeaveDetails(leaveId);
 
-      var leaveId = request.params.id;
-      // var leaveId = 1;
-      var leaveDetails = await db.leave.getSingleLeaveDetails(leaveId);
+          var data = {
+            'leaveDetails' : leaveDetails
+          }
 
-      var data = {
-        'leaveDetails' : leaveDetails
+          response.render('viewleave', data);
+
+      } catch(e) {
+          console.log('viewLeaveRequestHandler: ' + e);
       }
-
-      response.render('viewleave', data);
 
   };
 
   let reviewLeaveHandler = async function(request, response){
-
-      response.send('yaysssss');
+      try {
+          response.send('yaysssss');
+      } catch(e) {
+          console.log('reviewLeaveHandler: ' + e);
+      }
 
   };
 
