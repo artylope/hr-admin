@@ -19,3 +19,13 @@ ON (employees.id = manager_staff.staff_id)
 WHERE employees.id = 1;
 -- optional
 WHERE employees.id = 1;
+
+
+-- Return a leave query with organisation details, boss details
+SELECT leave.staff_id, employees.staff_name, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status, leave.created_at, leave.updated_at
+FROM leave
+INNER JOIN employees
+ON (leave.staff_id = employees.id)
+WHERE employees.id = 1;
+-- optional
+WHERE employees.id = 1;

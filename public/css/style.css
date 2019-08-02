@@ -123,6 +123,7 @@ button {
       color: white; }
 
 input[type=text],
+input[type=password],
 input[type=date] {
   font-family: 'Darker Grotesque', sans-serif;
   font-size: 18px;
@@ -377,7 +378,8 @@ section.login {
       width: 100%;
       text-align: left;
       margin-bottom: 30px; }
-    section.login .panel form input[type=text] {
+    section.login .panel form input[type=text],
+    section.login .panel form input[type=password] {
       width: 320px; }
     section.login .panel form .login-button {
       margin-top: 30px; }
