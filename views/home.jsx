@@ -107,6 +107,7 @@ class Home extends React.Component {
                               <div className="table-col">Start Date</div>
                               <div className="table-col">End Date</div>
                               <div className="table-col">Days Count</div>
+                              <div className="table-col">Request Status</div>
                               <div className="table-col">Actions</div>
                             </div>
 
