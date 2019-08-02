@@ -10,7 +10,7 @@ class ViewLeave extends React.Component {
       <MainWithNav>
                 <div className="wrapper">
                   <div className="title">
-                    <h1>Directory</h1><button>Add Employee</button>
+                    <h1>Directory</h1>
                   </div>
                   <div className="overlay">
                     <div className="modal">

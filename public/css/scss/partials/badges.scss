@@ -1,6 +1,6 @@
 .badge{
   text-transform: uppercase;
-  background-color: grey;
+  background-color: $primary;
   width: 120px;
   height: 30px;
   border-radius: 3px;
@@ -10,4 +10,12 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+
+  &.approved{
+    background-color: $success;
+  }
+
+  &.rejected{
+    background-color: $danger;
+  }
 }
