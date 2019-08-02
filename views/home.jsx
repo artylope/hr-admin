@@ -19,6 +19,7 @@ class Home extends React.Component {
                         <div className="table-col">Start Date</div>
                         <div className="table-col">End Date</div>
                         <div className="table-col">{leave.days_count}</div>
+                        <div className="table-col">{leave.request_status}</div>
                         <div className="table-col"><a href={leaveToApproveURL} >View Request</a></div>
                       </div>;
         return string;
@@ -34,6 +35,7 @@ class Home extends React.Component {
                         <div className="table-col">Start Date</div>
                         <div className="table-col">End Date</div>
                         <div className="table-col">{leave.days_count}</div>
+                        <div className="table-col">{leave.request_status}</div>
                         <div className="table-col"><a href={leaveAppliedURL} >View Request</a></div>
                       </div>;
         return string;
@@ -75,6 +77,7 @@ class Home extends React.Component {
                             <div className="table-col">Start Date</div>
                             <div className="table-col">End Date</div>
                             <div className="table-col">Days Count</div>
+                            <div className="table-col">Request Status</div>
                             <div className="table-col">Actions</div>
                           </div>
 
