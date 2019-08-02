@@ -20,6 +20,7 @@ module.exports = function (dbPoolInstance){
             const queryString = `
                                   SELECT * FROM leave
                                   WHERE manager_id = $1 AND request_status = 'submitted'
+                                  ORDER BY updated_at DESC
                                 `;
 
             let result = await dbPoolInstance.query(queryString,values);
@@ -41,6 +42,7 @@ module.exports = function (dbPoolInstance){
             const queryString = `
                                   SELECT * FROM leave
                                   WHERE staff_id = $1
+                                  ORDER BY updated_at DESC
                                 `;
 
             let result = await dbPoolInstance.query(queryString,values);
@@ -95,12 +97,14 @@ module.exports = function (dbPoolInstance){
           try {
               console.log('in update leave details');
               console.log(leaveId);
+              console.log(reviewStatus);
               let updatedAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
               const values = [leaveId, reviewStatus, updatedAt]
               const queryString = `
                                     UPDATE leave
                                     SET request_status = $2, updated_at = $3
-                                    WHERE id = $1;
+                                    WHERE id = $1
+                                    ;
                                   `;
               let result = await dbPoolInstance.query(queryString,values);
               return result.rows;

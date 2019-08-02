@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Darker+Grotesque:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Barlow:400,500,600&display=swap");
 body {
   background: #f1f3f5;
-  font-family: 'Darker Grotesque', sans-serif;
-  font-size: 20px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  color: #334455;
+  line-height: 1.4;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -43,6 +45,9 @@ a {
   font-size: 1.4rem;
   color: #745fb5;
   text-transform: uppercase; }
+
+p {
+  color: #334455; }
 
 .wrapper {
   width: 95%;
@@ -85,7 +90,7 @@ input[type=button],
 input[type=submit],
 input[type=reset],
 button {
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 18px;
   height: 45px;
   background: #745fb5;
@@ -126,7 +131,7 @@ button {
 input[type=text],
 input[type=password],
 input[type=date] {
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 18px;
   border-radius: 3px;
   border-style: none;
@@ -304,7 +309,8 @@ nav {
   nav #nav-links ul li {
     display: inline-block;
     margin-left: 10px;
-    margin-right: 10px; }
+    margin-right: 10px;
+    font-size: 1.2rem; }
     nav #nav-links ul li a {
       color: #334455;
       font-weight: 600; }
@@ -319,18 +325,19 @@ nav {
 
 .badge {
   text-transform: uppercase;
-  background-color: #745fb5;
-  width: 120px;
+  background-color: #aaa;
+  width: 100px;
   height: 30px;
   border-radius: 3px;
   color: white;
-  font-size: .8em;
+  font-size: .7em;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold; }
+  font-weight: bold;
+  letter-spacing: 1px; }
   .badge.approved {
-    background-color: #1CCF9B; }
+    background-color: #03C07B; }
   .badge.rejected {
     background-color: #FF6C6C; }
 

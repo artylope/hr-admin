@@ -24,14 +24,16 @@ class ViewLeave extends React.Component {
                       <p>Days count: {this.props.leaveDetails[0].days_count}</p>
                       <p className="badge">{this.props.leaveDetails[0].request_status}</p>
                       <form action={url} method="POST">
-                        <input className="button" value="approve" type="submit"/>
-                        <input className="button" value="reject" type="submit"/>
+                        <input hidden name="id" type="text" value={this.props.leaveDetails[0].id}/>
+                        <input className="button" name="outcome" value="approved" type="submit"/>
+                        <input className="button" name="outcome" value="rejected" type="submit"/>
                       </form>
                     </div>
                   </div>
                 </div>
-
+                <script src="../js/badge.js"></script>
         </MainWithNav>
+
     );
   }
 }

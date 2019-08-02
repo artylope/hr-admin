@@ -33,7 +33,7 @@ module.exports = function (db){
           console.log(leave);
 
           await db.leave.submitLeave(userId,managerId,leave);
-          response.send('yay');
+          response.redirect('/home');
 
       } catch(e) {
           console.log('submitLeaveRequestHandler: ' + e);
@@ -62,7 +62,17 @@ module.exports = function (db){
 
   let reviewLeaveHandler = async function(request, response){
       try {
-          response.send('yaysssss');
+          var leaveId = request.body.id;
+          var reviewStatus = request.body.outcome;
+          var newLeaveDetails = await db.leave.approveLeave(leaveId,reviewStatus);
+
+
+          var data = {
+            'newLeaveDetails' : newLeaveDetails
+          }
+
+          response.redirect('/home');
+
       } catch(e) {
           console.log('reviewLeaveHandler: ' + e);
       }

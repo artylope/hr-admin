@@ -125,7 +125,7 @@ class Home extends React.Component {
 
                 </div>
           </div>
-          <script src="../js/home.js"></script>
+          <script src="../js/badge.js"></script>
         </MainWithNav>
     );
   }
