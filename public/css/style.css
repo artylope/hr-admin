@@ -313,6 +313,19 @@ nav {
     nav #nav-links ul li:last-child {
       margin-right: 0; }
 
+.badge {
+  text-transform: uppercase;
+  background-color: grey;
+  width: 120px;
+  height: 30px;
+  border-radius: 3px;
+  color: white;
+  font-size: .8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold; }
+
 .title {
   display: flex;
   flex-direction: row;

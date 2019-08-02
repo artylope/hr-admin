@@ -16,8 +16,11 @@ class ViewLeave extends React.Component {
                     <div className="modal">
                       <a href="/home">Close</a>
                       <h1>Review Leave</h1>
-
-                      <p>{this.props.leaveDetails[0].leave_type}</p>
+                      <p>Staff ID: {this.props.leaveDetails[0].staff_id}</p>
+                      <p>Leave Type: {this.props.leaveDetails[0].leave_type}</p>
+                      <p>Manager ID: {this.props.leaveDetails[0].manager_id}</p>
+                      <p>Days count: {this.props.leaveDetails[0].days_count}</p>
+                      <p className="badge">{this.props.leaveDetails[0].request_status}</p>
                       <form action={url} method="POST">
                         <input className="button" name="approve" type="submit"/>
                         <input className="button" name="reject" type="submit"/>
