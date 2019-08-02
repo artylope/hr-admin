@@ -1,23 +1,24 @@
 const React = require("react");
 const MainWithNav = require('./templates/mainwithnav.jsx');
 
+
 class Home extends React.Component {
   render() {
     console.log('in home');
     console.log(this.props);
-
     {/*var leaveToApproveURL = '/viewleave/' + this.props.leaveToApprove.id;
     var leaveAppliedURL = '/viewleave/' + this.props.leaveApplied.id;*/}
 
     const leaveToApproveList = this.props.leaveToApprove.map(function(leave){
       var leaveToApproveURL = '/viewleave/' + leave.id;
+
         var string = <div className="table-row leave-to-approve">
                         <div className="table-col">{leave.id}</div>
                         <div className="table-col">{leave.staff_id}</div>
                         <div className="table-col">{leave.leave_type}</div>
                         <div className="table-col">{leave.manager_id}</div>
-                        <div className="table-col">Start Date</div>
-                        <div className="table-col">End Date</div>
+                        <div className="table-col">{leave.date_start.toISOString().replace('T16:00:00.000Z','')}</div>
+                        <div className="table-col">{leave.date_end.toISOString().replace('T16:00:00.000Z','')}</div>
                         <div className="table-col">{leave.days_count}</div>
                         <div className="table-col"><span className="badge">{leave.request_status}</span></div>
                         <div className="table-col"><a href={leaveToApproveURL} >View Request</a></div>
@@ -32,8 +33,8 @@ class Home extends React.Component {
                         <div className="table-col">{leave.staff_id}</div>
                         <div className="table-col">{leave.leave_type}</div>
                         <div className="table-col">{leave.manager_id}</div>
-                        <div className="table-col">Start Date</div>
-                        <div className="table-col">End Date</div>
+                        <div className="table-col">{leave.date_start.toISOString().replace('T16:00:00.000Z','')}</div>
+                        <div className="table-col">{leave.date_end.toISOString().replace('T16:00:00.000Z','')}</div>
                         <div className="table-col">{leave.days_count}</div>
                         <div className="table-col"><span className="badge">{leave.request_status}</span></div>
                         <div className="table-col"><a href={leaveAppliedURL} >View Request</a></div>
