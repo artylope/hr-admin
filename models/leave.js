@@ -24,7 +24,28 @@ module.exports = function (dbPoolInstance){
             return result.rows;
 
         } catch(e) {
-            console.log('submit leave: ' + e);
+            console.log('leave to approve: ' + e);
+        }
+    };
+
+  let leaveApplied = async function(userId) {
+    //see a list of leaves you applied
+        try {
+            console.log('in leave applied');
+            console.log(userId);
+
+            const values = [userId];
+
+            const queryString = `
+                                  SELECT * FROM leave
+                                  WHERE staff_id = $1
+                                `;
+
+            let result = await dbPoolInstance.query(queryString,values);
+            return result.rows;
+
+        } catch(e) {
+            console.log('leave applied: ' + e);
         }
     };
 
@@ -48,6 +69,7 @@ module.exports = function (dbPoolInstance){
 
   return {
     submitLeave,
+    leaveApplied,
     leaveToApprove
   };
 };

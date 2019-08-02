@@ -39,13 +39,15 @@ module.exports = function (db){
 
     //get a list of leave that you need to approve
     let leaveToApprove = await db.leave.leaveToApprove(userId);
+    let leaveApplied = await db.leave.leaveApplied(userId);
 
     response.cookie('manager_id', managerId);
 
     var data = {
           'user': user,
           'manager' : manager,
-          'leaveToApprove' : leaveToApprove
+          'leaveToApprove' : leaveToApprove,
+          'leaveApplied' : leaveApplied
     }
 
     response.render('home', data);
@@ -80,6 +82,20 @@ module.exports = function (db){
   };
 
 
+  let viewLeaveRequestHandler = async function(request, response){
+
+      response.render('viewleave');
+
+  };
+
+  let reviewLeaveHandler = async function(request, response){
+
+      response.send('yaysssss');
+
+  };
+
+
+
   /**
    * ===========================================
    * Export controller functions as a module
@@ -89,7 +105,9 @@ module.exports = function (db){
     adminRequestHandler,
     homeRequestHandler,
     applyLeaveRequestHandler,
-    submitLeaveRequestHandler
+    submitLeaveRequestHandler,
+    viewLeaveRequestHandler,
+    reviewLeaveHandler
   };
 
 }

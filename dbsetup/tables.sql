@@ -10,8 +10,9 @@ CREATE TABLE IF NOT EXISTS employees (
 
 CREATE TABLE IF NOT EXISTS manager_staff (
     id SERIAL PRIMARY KEY,
-    manager_id INTEGER,
-    staff_id INTEGER
+    staff_id INTEGER,
+    manager_id INTEGER
+
 );
 
 CREATE TABLE IF NOT EXISTS organisations (

@@ -45,7 +45,8 @@ a {
   text-transform: uppercase; }
 
 .wrapper {
-  width: 95%; }
+  width: 95%;
+  padding-bottom: 50px; }
   .wrapper .row {
     display: flex;
     flex-direction: row;
@@ -53,13 +54,17 @@ a {
     justify-content: space-between;
     align-items: flex-start;
     box-sizing: border-box; }
-    .wrapper .row .col-thirds {
-      width: 33.33%;
+    .wrapper .row .col {
       box-sizing: border-box;
-      padding-right: 20px; }
-      .wrapper .row .col-thirds:last-child {
+      padding-right: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex-basis: 100%;
+      flex: 1; }
+      .wrapper .row .col:last-child {
         padding-right: 0px; }
-      .wrapper .row .col-thirds .card {
+      .wrapper .row .col .card {
         width: 100%;
         background: white;
         box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
@@ -71,7 +76,7 @@ a {
         padding: 30px;
         text-align: left;
         box-sizing: border-box; }
-        .wrapper .row .col-thirds .card h2 {
+        .wrapper .row .col .card h2 {
           text-align: left;
           margin-bottom: 20px; }
 
@@ -136,7 +141,8 @@ input[type=date] {
   width: 100%;
   background: white;
   border-radius: 5px;
-  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3), 0 8px 12px rgba(58, 193, 203, 0.1); }
+  box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3), 0 8px 12px rgba(58, 193, 203, 0.1);
+  margin-bottom: 20px; }
   .table-container .table {
     width: 100%;
     display: flex;
@@ -146,7 +152,11 @@ input[type=date] {
     box-sizing: border-box; }
     .table-container .table .table-col {
       padding-right: 1rem;
-      padding-left: 1rem; }
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex-basis: 100%; }
     .table-container .table .table-row {
       width: 100%;
       background: white;
@@ -155,7 +165,7 @@ input[type=date] {
       box-sizing: border-box;
       align-items: center;
       display: flex;
-      flex-direction: rows; }
+      flex-direction: row; }
     .table-container .table .table-row-header {
       width: 100%;
       color: #678;
@@ -165,7 +175,7 @@ input[type=date] {
       border-radius: 5px 5px 0 0;
       font-weight: 600;
       display: flex;
-      flex-direction: rows;
+      flex-direction: row;
       align-items: center; }
     .table-container .table .table-row-bottom {
       width: 100%;
@@ -176,26 +186,38 @@ input[type=date] {
       border-radius: 0px 0px 5px 5px;
       font-weight: 600;
       display: flex;
-      flex-direction: rows;
+      flex-direction: row;
       align-items: center; }
 
 .flex-basis-2 {
-  flex-basis: 2%; }
+  flex-basis: 2% !important; }
 
 .flex-basis-5 {
-  flex-basis: 5%; }
+  flex-basis: 5% !important; }
 
 .flex-basis-10 {
-  flex-basis: 10%; }
+  flex-basis: 10% !important; }
 
 .flex-basis-15 {
-  flex-basis: 15%; }
+  flex-basis: 15% !important; }
 
 .flex-basis-20 {
-  flex-basis: 20%; }
+  flex-basis: 20% !important; }
 
 .flex-basis-25 {
-  flex-basis: 25%; }
+  flex-basis: 25% !important; }
+
+.flex-basis-33 {
+  flex-basis: 33.33% !important; }
+
+.flex-basis-50 {
+  flex-basis: 50%; }
+
+.flex-basis-66 {
+  flex-basis: 66.66%; }
+
+.flex-basis-100 {
+  flex-basis: 100%; }
 
 .overlay {
   position: fixed;
@@ -293,11 +315,21 @@ nav {
 
 .title {
   display: flex;
-  flex-direction: rows;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-top: 2em;
   margin-bottom: 2em; }
+
+#home {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #home .row {
+    margin-bottom: 30px; }
 
 section.login {
   font-size: 24px;

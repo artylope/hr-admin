@@ -15,4 +15,7 @@ module.exports = function (app, allModels){
   app.get('/applyleave', employeesController.applyLeaveRequestHandler);
   app.post('/applyleave', employeesController.submitLeaveRequestHandler);
 
+  app.get('/viewleave', employeesController.viewLeaveRequestHandler);
+  app.put('/home', employeesController.reviewLeaveHandler);
+
 };
