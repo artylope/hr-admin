@@ -356,10 +356,15 @@ section.login {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  box-sizing: border-box; }
   section.login .hero {
     width: 50%;
-    background: #745fb5; }
+    background: white;
+    background-image: url("../../img/hero.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
   section.login .panel {
     width: 50%;
     height: 100%;

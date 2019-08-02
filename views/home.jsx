@@ -61,7 +61,7 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <h2>Requires you approval</h2>
+                  <h2>Requires Your Approval</h2>
                   <div className="row">
                   <div className="col">
 
