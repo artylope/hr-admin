@@ -144,4 +144,4 @@ INSERT INTO organisations(organisation_name) VALUES ('Ministry of Foreign Affair
 
 
 INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status, created_at, updated_at)
-VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 2, 'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
+VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
