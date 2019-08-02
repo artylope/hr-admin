@@ -7,6 +7,7 @@ module.exports = function (dbPoolInstance){
 
   // `dbPoolInstance` is accessible within this function scope
 
+  // check the username and password if exist in database
   let authenticateUser = async function(username, password) {
         try {
             // console.log('in user model, authenticateuser, input is');

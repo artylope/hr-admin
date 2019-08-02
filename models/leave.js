@@ -9,8 +9,8 @@ module.exports = function (dbPoolInstance){
 
   // `dbPoolInstance` is accessible within this function scope
 
+  //see a list of leave that the user needs to review (as a manager of another staff) in the homepage
   let leaveToApprove = async function(userId) {
-    //if you are the manager you can see a list of leaves that people applied to you for you to approve
         try {
             console.log('in leave to approve');
             console.log(userId);
@@ -30,8 +30,8 @@ module.exports = function (dbPoolInstance){
         }
     };
 
+  //see a list of leave that the user has applied, to be used in the home page
   let leaveApplied = async function(userId) {
-    //see a list of leaves you applied
         try {
             console.log('in leave applied');
             console.log(userId);
@@ -51,6 +51,7 @@ module.exports = function (dbPoolInstance){
         }
     };
 
+  //able to submit leave request to your manager
   let submitLeave = async function(userId,managerId,leave) {
         try {
             console.log('in submit leave model');
@@ -69,6 +70,9 @@ module.exports = function (dbPoolInstance){
             console.log('submit leave: ' + e);
         }
     };
+
+    //able to retrieve the single leave request for approval purpose
+    //pass in the id of the leave request and display the details.
 
 
   return {

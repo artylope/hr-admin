@@ -7,6 +7,7 @@ module.exports = function (dbPoolInstance){
 
   // `dbPoolInstance` is accessible within this function scope
 
+  //get a list of all employees to show in the directory
   let getAllEmployees = async function() {
         try {
             const queryString = `
@@ -25,6 +26,7 @@ module.exports = function (dbPoolInstance){
         }
     };
 
+  //get a single employee details by id, will also append manager_id and the organisation's name.
   let getOneEmployee = async function(userId) {
         try {
 
@@ -48,6 +50,7 @@ module.exports = function (dbPoolInstance){
         }
     };
 
+    //get details of the manager by passing in the managerId
     let getManager = async function(managerId) {
           try {
 
