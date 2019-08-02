@@ -19,3 +19,8 @@ ON (employees.id = manager_staff.staff_id)
 WHERE employees.id = 1;
 -- optional
 WHERE employees.id = 1;
+
+
+UPDATE leave
+SET request_status = 'approved', updated_at = '2019-08-02 10:00:58'
+WHERE id = 1;

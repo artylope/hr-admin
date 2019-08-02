@@ -71,13 +71,51 @@ module.exports = function (dbPoolInstance){
         }
     };
 
-    //able to retrieve the single leave request for approval purpose
-    //pass in the id of the leave request and display the details.
+    //able to retrieve the leave detail by id
+    let getSingleLeaveDetails = async function(leaveId) {
+          try {
+              console.log('in get leave details');
+              console.log(leaveId);
+              const values = [leaveId]
+              const queryString = `
+                                    SELECT * FROM leave
+                                    WHERE id = $1;
+                                  `;
+              let result = await dbPoolInstance.query(queryString,values);
+              return result.rows;
+
+          } catch(e) {
+              console.log('in get leave details' + e);
+          }
+      };
+
+
+    //for approving or rejecting leave by leave id
+    let approveLeave = async function(leaveId, reviewStatus) {
+          try {
+              console.log('in update leave details');
+              console.log(leaveId);
+              let updatedAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
+              const values = [leaveId, reviewStatus, updatedAt]
+              const queryString = `
+                                    UPDATE leave
+                                    SET request_status = $2, updated_at = $3
+                                    WHERE id = $1;
+                                  `;
+              let result = await dbPoolInstance.query(queryString,values);
+              return result.rows;
+
+          } catch(e) {
+              console.log('in update leave details' + e);
+          }
+      };
 
 
   return {
     submitLeave,
     leaveApplied,
-    leaveToApprove
+    leaveToApprove,
+    getSingleLeaveDetails,
+    approveLeave
   };
 };

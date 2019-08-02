@@ -2,6 +2,7 @@ module.exports = function (app, allModels){
 
   const userController = require('./controllers/user')(allModels);
   const employeesController = require('./controllers/employees')(allModels);
+  const leaveController = require('./controllers/leave')(allModels);
 
 
   app.get('/', userController.indexRedirectHandler);
@@ -12,10 +13,10 @@ module.exports = function (app, allModels){
   app.get('/home', employeesController.homeRequestHandler);
   app.get('/admin', employeesController.adminRequestHandler);
 
-  app.get('/applyleave', employeesController.applyLeaveRequestHandler);
-  app.post('/applyleave', employeesController.submitLeaveRequestHandler);
+  app.get('/applyleave', leaveController.applyLeaveRequestHandler);
+  app.post('/applyleave', leaveController.submitLeaveRequestHandler);
 
-  app.get('/viewleave', employeesController.viewLeaveRequestHandler);
-  app.put('/home', employeesController.reviewLeaveHandler);
+  app.get('/viewleave', leaveController.viewLeaveRequestHandler);
+  app.put('/home', leaveController.reviewLeaveHandler);
 
 };

@@ -330,6 +330,8 @@ nav {
   align-items: center; }
   #home .row {
     margin-bottom: 30px; }
+  #home h2 {
+    margin-bottom: 20px; }
 
 section.login {
   font-size: 24px;

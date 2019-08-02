@@ -54,11 +54,11 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-
+                  <h2>Requires you approval</h2>
                   <div className="row">
                   <div className="col">
-                    <div className="card">
-                      <h2>Requires you approval</h2>
+
+
 
                       <div className="table-container">
                         <div className="table">
@@ -80,14 +80,15 @@ class Home extends React.Component {
                         </div>
                       </div>
 
-                    </div>
+
                   </div>
                   </div>
 
+                  <h2>Your Leave Application</h2>
                   <div className="row">
                     <div className="col">
-                      <div className="card">
-                        <h2>Your Leave Application</h2>
+
+
                         <div className="table-container">
                           <div className="table">
                             <div className="table-row table-row-header">
@@ -107,7 +108,7 @@ class Home extends React.Component {
                             </div>
                           </div>
                         </div>
-                      </div>
+
                     </div>
                   </div>
 
