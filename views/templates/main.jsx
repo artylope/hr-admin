@@ -16,6 +16,10 @@ class Main extends React.Component {
       </head>
       <body>
         { this.props.children }
+        <script src="../js/feather.js"></script>
+        <script>
+          feather.replace()
+        </script>
       </body>
       </html>
 

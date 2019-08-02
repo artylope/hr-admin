@@ -14,7 +14,7 @@ class ViewLeave extends React.Component {
                   </div>
                   <div className="overlay">
                     <div className="modal">
-                      <a href="/home">Close</a>
+                      <a href="/home"><i data-feather="x-circle"></i></a>
                       <h1>Review Leave</h1>
                       <p>Staff ID: {this.props.leaveDetails[0].staff_id}</p>
                       <p>Leave Type: {this.props.leaveDetails[0].leave_type}</p>

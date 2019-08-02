@@ -27,12 +27,16 @@ class MainWithNav extends React.Component {
                 <li><a href="#">Salary</a></li>
                 <li><a href="#">Security</a></li>
                 <li><a href="#">Performance</a></li>*/}
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/logout">Logout<i data-feather="log-out"></i></a></li>
               </ul>
             </div>
           </nav>
         </header>
         { this.props.children }
+        <script src="../js/feather.js"></script>
+        <script>
+          feather.replace()
+        </script>
       </body>
       </html>
 
