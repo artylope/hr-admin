@@ -14,7 +14,10 @@ class ApplyLeave extends React.Component {
                   </div>
                   <div class="overlay">
                     <div class="modal">
+                    <div className="close-button-div">
                       <a href="/home"><i data-feather="x-circle"></i></a>
+                    </div>
+
                       <h1>Apply Leave</h1>
                       <form action="/applyleave" method="POST">
                         <div className="input-group">
@@ -42,7 +45,9 @@ class ApplyLeave extends React.Component {
                         <div className="input-group">
                           <input hidden type="text" name="request_status" value="submitted"/>
                         </div>
-                        <input className="button" type="submit" value="Apply"/>
+                        <div className="button-group">
+                          <input className="button" type="submit" value="Apply"/>
+                        </div>
                       </form>
                     </div>
                   </div>
