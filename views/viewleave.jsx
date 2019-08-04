@@ -14,7 +14,10 @@ class ViewLeave extends React.Component {
                   </div>
                   <div className="overlay">
                     <div className="modal">
-                      <a href="/home"><i data-feather="x-circle"></i></a>
+                      <div className="close-button-div">
+                        <a href="/home"><i data-feather="x-circle"></i></a>
+                      </div>
+
                       <h1>Review Leave</h1>
                       <p>Staff ID: {this.props.leaveDetails[0].staff_id}</p>
                       <p>Leave Type: {this.props.leaveDetails[0].leave_type}</p>
@@ -25,8 +28,11 @@ class ViewLeave extends React.Component {
                       <p className="badge">{this.props.leaveDetails[0].request_status}</p>
                       <form action={url} method="POST">
                         <input hidden name="id" type="text" value={this.props.leaveDetails[0].id}/>
-                        <input className="button" name="outcome" value="approved" type="submit"/>
-                        <input className="button" name="outcome" value="rejected" type="submit"/>
+                        <div className="button-group">
+                          <input className="button" name="outcome" value="approved" type="submit"/>
+                          <input className="button" name="outcome" value="rejected" type="submit"/>
+                        </div>
+
                       </form>
                     </div>
                   </div>

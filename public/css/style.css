@@ -287,6 +287,24 @@ input[type=date] {
       flex-direction: column;
       justify-content: center;
       align-items: center; }
+  .overlay .modal .close-button-div, .overlay .modal-sm .close-button-div, .overlay .side-panel-container .close-button-div {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 20px; }
+    .overlay .modal .close-button-div svg, .overlay .modal-sm .close-button-div svg, .overlay .side-panel-container .close-button-div svg {
+      width: 30px;
+      height: 30px; }
+  .overlay .modal h1, .overlay .modal-sm h1, .overlay .side-panel-container h1 {
+    margin-bottom: 30px; }
+  .overlay .modal .badge, .overlay .modal-sm .badge, .overlay .side-panel-container .badge {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .overlay .modal .button-group, .overlay .modal-sm .button-group, .overlay .side-panel-container .button-group {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px; }
+    .overlay .modal .button-group .button, .overlay .modal-sm .button-group .button, .overlay .side-panel-container .button-group .button {
+      margin-right: 20px; }
 
 header {
   position: fixed;
@@ -360,6 +378,8 @@ nav {
     margin-bottom: 30px; }
   #home h2 {
     margin-bottom: 20px; }
+  #home .profile .button {
+    margin-top: 20px; }
 
 section.login {
   font-size: 24px;

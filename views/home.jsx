@@ -51,13 +51,13 @@ class Home extends React.Component {
                   </div>
                   <div className="row">
                     <div className="col">
-                      <div className="card">
+                      <div className="card profile">
                         <h2>Your Details</h2>
                         Name: {this.props.user[0].staff_email}<br/>
                         Phone: {this.props.user[0].staff_phone}<br/>
                         Organisation: {this.props.user[0].organisation_name}<br/>
                         Your Manager: {this.props.manager[0].staff_name}
-                        <button><a href="/applyleave">Apply Leave</a></button>
+                        <button className="button"><a href="/applyleave">Apply Leave</a></button>
                       </div>
                     </div>
                   </div>
