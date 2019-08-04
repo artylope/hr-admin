@@ -29,3 +29,12 @@ ON (leave.staff_id = employees.id)
 WHERE employees.id = 1;
 -- optional
 WHERE employees.id = 1;
+
+
+SELECT leave.staff_id, leave.manager_id, employees.staff_name, leave.date_start, leave.date_end, leave.days_count, leave.request_status, leave.created_at, leave.updated_at
+FROM leave
+INNER JOIN employees
+ON (leave.manager_id = employees.id)
+WHERE employees.id = 1;
+-- optional
+WHERE employees.id = 1;

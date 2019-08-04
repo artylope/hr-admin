@@ -6,6 +6,23 @@ class ViewLeave extends React.Component {
     var url = "/home" + "?_method=PUT";
     console.log(this.props);
 
+    let leaveStatus = this.props.leaveDetails[0].request_status;
+    var FORM = '';
+
+    if (leaveStatus === 'submitted' && parseInt(this.props.thisUser) !== parseInt(this.props.leaveDetails[0].staff_id)){
+      FORM =  <form action={url} method="POST">
+                    <input hidden name="id" type="text" value={this.props.leaveDetails[0].id}/>
+                    <div className="button-group">
+                    <input className="button" name="outcome" value="approve" type="submit"/>
+                    <input className="button" name="outcome" value="reject" type="submit"/>
+                    </div>
+                    </form>;
+    }
+
+    // if (parseInt(this.props.thisUser) === parseInt(this.props.leaveDetails[0].staff_id)){
+    //   FORM =  '';
+    // }
+
     return (
       <MainWithNav>
                 <div className="wrapper">
@@ -20,20 +37,14 @@ class ViewLeave extends React.Component {
 
                       <h1>Review Leave</h1>
                       <p>Staff ID: {this.props.leaveDetails[0].staff_id}</p>
-                      <p>Leave Type: {this.props.leaveDetails[0].leave_type}</p>
+                      <p>Staff Name: {this.props.leaveDetails[0].staff_name}</p>
+                      <p>Leave Type: <span className="capitalised">{this.props.leaveDetails[0].leave_type}</span></p>
                       <p>Manager ID: {this.props.leaveDetails[0].manager_id}</p>
                       <p>Days count: {this.props.leaveDetails[0].date_start.toISOString().replace('T16:00:00.000Z','')}</p>
                       <p>Days count: {this.props.leaveDetails[0].date_end.toISOString().replace('T16:00:00.000Z','')}</p>
                       <p>Days count: {this.props.leaveDetails[0].days_count}</p>
                       <p className="badge">{this.props.leaveDetails[0].request_status}</p>
-                      <form action={url} method="POST">
-                        <input hidden name="id" type="text" value={this.props.leaveDetails[0].id}/>
-                        <div className="button-group">
-                          <input className="button" name="outcome" value="approved" type="submit"/>
-                          <input className="button" name="outcome" value="rejected" type="submit"/>
-                        </div>
-
-                      </form>
+                      {FORM}
                     </div>
                   </div>
                 </div>

@@ -47,9 +47,11 @@ module.exports = function (db){
           var leaveId = request.params.id;
           // var leaveId = 1;
           var leaveDetails = await db.leave.getSingleLeaveDetails(leaveId);
+          var userId = request.cookies.user_id;
 
           var data = {
-            'leaveDetails' : leaveDetails
+            'leaveDetails' : leaveDetails,
+            'thisUser' : userId
           }
 
           response.render('viewleave', data);
@@ -64,6 +66,16 @@ module.exports = function (db){
       try {
           var leaveId = request.body.id;
           var reviewStatus = request.body.outcome;
+
+          if (reviewStatus === 'approve'){
+            reviewStatus = 'approved';
+          } else if (reviewStatus === 'reject'){
+            reviewStatus = 'rejected';
+          }
+
+          console.log('new review status');
+          console.log(reviewStatus);
+
           var newLeaveDetails = await db.leave.approveLeave(leaveId,reviewStatus);
 
 

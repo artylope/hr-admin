@@ -14,9 +14,9 @@ class Home extends React.Component {
 
         var string = <div className="table-row leave-to-approve">
                         <div className="table-col">{leave.id}</div>
-                        <div className="table-col">{leave.staff_id}</div>
-                        <div className="table-col">{leave.leave_type}</div>
-                        <div className="table-col">{leave.manager_id}</div>
+                        <div className="table-col">{leave.staff_name}</div>
+                        <div className="table-col capitalised">{leave.leave_type}</div>
+                        {/*<div className="table-col">{leave.manager_id}</div>*/}
                         <div className="table-col">{leave.date_start.toISOString().replace('T16:00:00.000Z','')}</div>
                         <div className="table-col">{leave.date_end.toISOString().replace('T16:00:00.000Z','')}</div>
                         <div className="table-col">{leave.days_count}</div>
@@ -31,7 +31,7 @@ class Home extends React.Component {
         var string = <div className="table-row leave-applied">
                         <div className="table-col">{leave.id}</div>
                         <div className="table-col">{leave.staff_id}</div>
-                        <div className="table-col">{leave.leave_type}</div>
+                        <div className="table-col capitalised">{leave.leave_type}</div>
                         <div className="table-col">{leave.manager_id}</div>
                         <div className="table-col">{leave.date_start.toISOString().replace('T16:00:00.000Z','')}</div>
                         <div className="table-col">{leave.date_end.toISOString().replace('T16:00:00.000Z','')}</div>
@@ -72,9 +72,9 @@ class Home extends React.Component {
                         <div className="table">
                           <div className="table-row table-row-header">
                             <div className="table-col">Leave ID</div>
-                            <div className="table-col">Staff ID</div>
+                            <div className="table-col">Staff Name</div>
                             <div className="table-col">Leave Type</div>
-                            <div className="table-col">Manager ID</div>
+                            {/*<div className="table-col">Manager ID</div>*/}
                             <div className="table-col">Start Date</div>
                             <div className="table-col">End Date</div>
                             <div className="table-col">Days Count</div>

@@ -49,6 +49,9 @@ a {
 p {
   color: #334455; }
 
+.capitalised {
+  text-transform: capitalize; }
+
 .wrapper {
   width: 95%;
   margin-top: 60px;

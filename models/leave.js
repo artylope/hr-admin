@@ -18,10 +18,12 @@ module.exports = function (dbPoolInstance){
             const values = [userId];
 
             const queryString = `
-                                  SELECT * FROM leave
-                                  WHERE manager_id = $1 AND request_status = 'submitted'
-                                  ORDER BY updated_at DESC
-                                `;
+                                  SELECT leave.id, leave.staff_id, employees.staff_name, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status, leave.created_at, leave.updated_at
+                                  FROM leave
+                                  INNER JOIN employees
+                                  ON (leave.staff_id = employees.id)
+                                  WHERE leave.manager_id = $1
+                                  ORDER BY leave.updated_at DESC                                `;
 
             let result = await dbPoolInstance.query(queryString,values);
             return result.rows;
@@ -80,8 +82,11 @@ module.exports = function (dbPoolInstance){
               console.log(leaveId);
               const values = [leaveId]
               const queryString = `
-                                    SELECT * FROM leave
-                                    WHERE id = $1;
+                                    SELECT leave.id, leave.staff_id, employees.staff_name, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status, leave.created_at, leave.updated_at
+                                    FROM leave
+                                    INNER JOIN employees
+                                    ON (leave.staff_id = employees.id)
+                                    WHERE leave.id = $1;
                                   `;
               let result = await dbPoolInstance.query(queryString,values);
               return result.rows;
