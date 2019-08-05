@@ -7,6 +7,7 @@ module.exports = function (db){
    */
 
   let applyLeaveRequestHandler = async function(request, response){
+    console.log("apply leave")
       try {
           let userId = request.cookies.user_id;
           let managerId = request.cookies.manager_id;
