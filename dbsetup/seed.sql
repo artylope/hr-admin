@@ -141,7 +141,11 @@ INSERT INTO organisations(organisation_name) VALUES ('Land Transport Authority')
 INSERT INTO organisations(organisation_name) VALUES ('National Arts Council');
 INSERT INTO organisations(organisation_name) VALUES ('Housing and Development Board');
 INSERT INTO organisations(organisation_name) VALUES ('Ministry of Foreign Affairs');
+INSERT INTO organisations(organisation_name) VALUES ('Ministry of Health');
 
 
-INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status, created_at, updated_at)
-VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
+-- INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status, created_at, updated_at)
+-- VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
+
+INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted') ;
