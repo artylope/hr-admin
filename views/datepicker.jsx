@@ -8,6 +8,7 @@ class Datepicker extends React.Component {
       <Main>
         <DayPicker />
         <script src="../js/datepicker.js"></script>
+        <script src="https://unpkg.com/react-day-picker/lib/daypicker.min.js"></script>
       </Main>
     );
   }

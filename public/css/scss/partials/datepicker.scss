@@ -1,0 +1,7 @@
+.DayPicker-Day{
+  &.selected{
+    background: $primary;
+    color: white;
+    border-radius: 0;
+  }
+}
