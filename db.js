@@ -71,6 +71,9 @@ const userModelsObject = userModelsFunction( pool );
 const leaveModelsFunction = require('./models/leave');
 const leaveModelsObject = leaveModelsFunction( pool );
 
+const newLeaveModelsFunction = require('./models/newleave');
+const newLeaveModelsObject = newLeaveModelsFunction( pool );
+
 
 
 /*
@@ -96,5 +99,6 @@ module.exports = {
   pool:pool,
   employees: employeesModelsObject,
   user: userModelsObject,
-  leave: leaveModelsObject
+  leave: leaveModelsObject,
+  newLeave: newLeaveModelsObject
 };

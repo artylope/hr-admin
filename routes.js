@@ -3,6 +3,7 @@ module.exports = function (app, allModels){
   const userController = require('./controllers/user')(allModels);
   const employeesController = require('./controllers/employees')(allModels);
   const leaveController = require('./controllers/leave')(allModels);
+  const newLeaveController = require('./controllers/newleave')(allModels);
 
 
   app.get('/', userController.indexRedirectHandler);
@@ -19,5 +20,6 @@ module.exports = function (app, allModels){
   app.get('/viewleave/:id', leaveController.viewLeaveRequestHandler);
   app.put('/home', leaveController.reviewLeaveHandler);
 
-  app.get('/datepicker', leaveController.datePickerHandler);
+  app.get('/datepicker', newLeaveController.datePickerHandler);
+  app.post('/applynewleave', newLeaveController.applyNewLeaveHandler);
 };

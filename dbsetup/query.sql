@@ -38,3 +38,9 @@ ON (leave.manager_id = employees.id)
 WHERE employees.id = 1;
 -- optional
 WHERE employees.id = 1;
+
+--
+-- INSERT INTO leave_group (staff_id, leave_type, manager_id, request_status, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, $6);
+--
+--
+-- INSERT INTO students (name, phone, email) VALUES ('Adam Aims', '(415)555-5555', 'adam@example.com'),('Janet Jones', '(415)123-5555', 'janet@example.com') RETURNING ID;

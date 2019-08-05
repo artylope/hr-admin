@@ -258,8 +258,8 @@ select {
   cursor: pointer;
   /* Add a pointer on hover */ }
   .overlay .modal {
-    height: 60%;
-    width: 1200px;
+    height: 70%;
+    width: 900px;
     background: white;
     border-radius: 5px;
     z-index: 3;
@@ -302,12 +302,13 @@ select {
   .overlay .modal .close-button-div, .overlay .modal-sm .close-button-div, .overlay .side-panel-container .close-button-div {
     width: 100%;
     text-align: right;
-    margin-bottom: 10px; }
+    margin-bottom: 0px; }
     .overlay .modal .close-button-div svg, .overlay .modal-sm .close-button-div svg, .overlay .side-panel-container .close-button-div svg {
       width: 30px;
       height: 30px; }
   .overlay .modal h1, .overlay .modal-sm h1, .overlay .side-panel-container h1 {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    margin-top: -10px; }
   .overlay .modal .badge, .overlay .modal-sm .badge, .overlay .side-panel-container .badge {
     margin-top: 10px;
     margin-bottom: 10px; }
