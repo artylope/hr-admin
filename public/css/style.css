@@ -147,6 +147,15 @@ input[type=date] {
     font-weight: 600;
     margin-bottom: 10px; }
 
+select {
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  border-radius: 3px;
+  border-style: none;
+  height: 40px;
+  width: 280px;
+  border: 1px solid #ececec; }
+
 .table-container {
   width: 100%;
   background: white;
@@ -293,7 +302,7 @@ input[type=date] {
   .overlay .modal .close-button-div, .overlay .modal-sm .close-button-div, .overlay .side-panel-container .close-button-div {
     width: 100%;
     text-align: right;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
     .overlay .modal .close-button-div svg, .overlay .modal-sm .close-button-div svg, .overlay .side-panel-container .close-button-div svg {
       width: 30px;
       height: 30px; }
