@@ -27,6 +27,7 @@ node index.js
 to seed database
 ```
 dbsetup/tables.sql
+dbsetup/seed.sql
 ```
 
 ## Unsolved Problem 
