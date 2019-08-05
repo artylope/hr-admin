@@ -32,3 +32,32 @@ CREATE TABLE IF NOT EXISTS leave (
     created_at TIMESTAMP,
     updated_at TIMESTAMP
 );
+
+
+-- new idea for leave
+CREATE TABLE IF NOT EXISTS leave_group (
+    id SERIAL PRIMARY KEY,
+    staff_id INTEGER,
+    leave_type TEXT,
+    manager_id INTEGER,
+    request_status TEXT,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS calendar (
+    id SERIAL PRIMARY KEY,
+    calendar_date DATE,
+    calendar_desc TEXT,
+    calendar_type TEXT,
+    calendar_day  INTEGER,
+    calendar_year INTEGER
+);
+
+
+CREATE TABLE IF NOT EXISTS leave_days (
+    id SERIAL PRIMARY KEY,
+    leave_group_id INTEGER,
+    leave_date DATE,
+    leave_block TEXT
+);

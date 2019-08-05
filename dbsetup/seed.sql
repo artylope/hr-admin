@@ -145,3 +145,13 @@ INSERT INTO organisations(organisation_name) VALUES ('Ministry of Foreign Affair
 
 INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status, created_at, updated_at)
 VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
+
+
+INSERT INTO leave_group (staff_id, leave_type, manager_id, request_status, created_at, updated_at)
+VALUES (1, 'medical leave', 2,'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
+
+INSERT INTO leave_group (leave_group_id, leave_date, leave_block)
+VALUES (1, '2019-08-02', 'full day') ;
+
+INSERT INTO leave_group (leave_group_id, leave_date, leave_block)
+VALUES (1, '2019-08-03', 'full day') ;

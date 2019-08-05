@@ -371,6 +371,11 @@ nav {
   .badge.rejected {
     background-color: #FF6C6C; }
 
+.DayPicker-Day.selected {
+  background: #745fb5;
+  color: white;
+  border-radius: 0; }
+
 .title {
   display: flex;
   flex-direction: row;

@@ -19,4 +19,5 @@ module.exports = function (app, allModels){
   app.get('/viewleave/:id', leaveController.viewLeaveRequestHandler);
   app.put('/home', leaveController.reviewLeaveHandler);
 
+  app.get('/datepicker', leaveController.datePickerHandler);
 };

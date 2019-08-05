@@ -92,6 +92,21 @@ module.exports = function (db){
   };
 
 
+  let datePickerHandler = async function(request, response){
+      try {
+
+          response.render('datepicker');
+
+      } catch(e) {
+          console.log('reviewLeaveHandler: ' + e);
+      }
+
+  };
+
+
+
+
+
 
   /**
    * ===========================================
@@ -102,7 +117,8 @@ module.exports = function (db){
     applyLeaveRequestHandler,
     submitLeaveRequestHandler,
     viewLeaveRequestHandler,
-    reviewLeaveHandler
+    reviewLeaveHandler,
+    datePickerHandler
   };
 
 }

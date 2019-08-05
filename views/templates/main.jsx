@@ -11,7 +11,9 @@ class Main extends React.Component {
         <meta name="author" content="Artylope"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"/>
         {/*<link rel="stylesheet" href="css/flexboxgrid.css"/>*/}
+        <link rel="stylesheet" href="https://unpkg.com/react-day-picker/lib/style.css"/>
         <link rel="stylesheet" href="../css/style.css"/>
+
 
       </head>
       <body>
