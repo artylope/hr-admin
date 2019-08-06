@@ -35,7 +35,7 @@ if( process.env.DATABASE_URL ){
   configs = {
     user: 'yixin',
     host: '127.0.0.1',
-    database: 'hrportal',
+    database: 'hrportal2',
     port: 5432
   };
 }
