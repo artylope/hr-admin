@@ -131,10 +131,7 @@ var sendForm = function(userId, managerId){
   var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
   var theUrl = "/applynewleave";
 
-  xmlhttp.addEventListener("load", function(){
-    console.log("DONE");
-    console.log( this.responseText );
-  });
+  xmlhttp.addEventListener("load", refreshPage);
 
   xmlhttp.open("POST", theUrl);
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -142,3 +139,12 @@ var sendForm = function(userId, managerId){
 
   return;
 };
+
+var refreshPage = function(event){
+
+  if(this.responseText === 'success'){
+    document.location.href = '/home';
+  } else {
+    console.log('failed');
+  }
+}

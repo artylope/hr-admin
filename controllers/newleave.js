@@ -24,7 +24,7 @@ module.exports = function (db){
 
         await db.newLeave.createLeaveGroup(obj);
 
-        response.send('yays');
+        response.send('success');
 
         // await db.newleave.addLeaveDays();
 
