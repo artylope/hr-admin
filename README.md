@@ -34,7 +34,7 @@ dbsetup/seed.sql
 ```
 
 ## Unsolved Problem 
-- dates and timezone
+- dates and timezone. 6th in database but 5th in the UI.
 - using of datepicker to select multiple dates
 - calculation of leave balances
 
