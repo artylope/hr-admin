@@ -22,4 +22,6 @@ module.exports = function (app, allModels){
 
   app.get('/datepicker', newLeaveController.datePickerHandler);
   app.post('/applynewleave', newLeaveController.applyNewLeaveHandler);
+
+  app.get('/*', userController.errorRedirectHandler);
 };

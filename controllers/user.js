@@ -88,6 +88,17 @@ module.exports = function (db){
 
   }
 
+  let errorRedirectHandler = function(request, response){
+      try {
+
+        response.render('error');
+
+      } catch(e) {
+          console.log('logoutRequestHandler: ' + e);
+      }
+
+  }
+
   /**
    * ===========================================
    * Export controller functions as a module
@@ -97,7 +108,8 @@ module.exports = function (db){
     indexRedirectHandler,
     loginRequestHandler,
     authenticateRequestHandler,
-    logoutRequestHandler
+    logoutRequestHandler,
+    errorRedirectHandler
   };
 
 }
