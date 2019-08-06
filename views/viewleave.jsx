@@ -40,8 +40,8 @@ class ViewLeave extends React.Component {
                       <p>Staff Name: {this.props.leaveDetails[0].staff_name}</p>
                       <p>Leave Type: <span className="capitalised">{this.props.leaveDetails[0].leave_type}</span></p>
                       <p>Manager ID: {this.props.leaveDetails[0].manager_id}</p>
-                      <p>Days count: {this.props.leaveDetails[0].date_start.toISOString().replace('T16:00:00.000Z','')}</p>
-                      <p>Days count: {this.props.leaveDetails[0].date_end.toISOString().replace('T16:00:00.000Z','')}</p>
+                      <p>Days count: {this.props.leaveDetails[0].date_start.toDateString()}</p>
+                      <p>Days count: {this.props.leaveDetails[0].date_end.toDateString()}</p>
                       <p>Days count: {this.props.leaveDetails[0].days_count}</p>
                       <p className="badge">{this.props.leaveDetails[0].request_status}</p>
                       {FORM}
