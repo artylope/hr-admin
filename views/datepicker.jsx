@@ -18,7 +18,7 @@ class Datepicker extends React.Component {
           </div>
 
             <h1>Apply Leave</h1>
-            <form id="leave-form" action="/applynewleave" method="POST">
+            <div id="leave-form">
               <div className="input-group">
                 <p>Leave Type</p>
                 <select id="leave-type" name="leave_type">
@@ -39,7 +39,7 @@ class Datepicker extends React.Component {
               {/*<div className="button-group">
                 <input className="button" type="submit" value="Apply"/>
               </div>*/}
-            </form>
+            </div>
           </div>
         </div>
       </div>

@@ -132,14 +132,12 @@ var sendForm = function(userId, managerId){
   var theUrl = "/applynewleave";
 
   xmlhttp.addEventListener("load", function(){
-
     console.log("DONE");
     console.log( this.responseText );
   });
 
   xmlhttp.open("POST", theUrl);
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
   xmlhttp.send(JSON.stringify(data));
 
   return;
