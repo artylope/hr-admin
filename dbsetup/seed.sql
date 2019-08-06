@@ -102,7 +102,7 @@ INSERT INTO employees (username, password, staff_name, staff_email, staff_phone,
 INSERT INTO employees (username, password, staff_name, staff_email, staff_phone, organisation_id) VALUES ('yvonneteo','password','Yvonne Teo','yvonneteo@email.com','62113199',5);
 
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (1, 2);
-INSERT INTO manager_staff(staff_id, manager_id) VALUES (2, 2);
+INSERT INTO manager_staff(staff_id, manager_id) VALUES (2, 3);
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (3, 2);
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (4, 2);
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (5, 2);
@@ -141,7 +141,14 @@ INSERT INTO organisations(organisation_name) VALUES ('Land Transport Authority')
 INSERT INTO organisations(organisation_name) VALUES ('National Arts Council');
 INSERT INTO organisations(organisation_name) VALUES ('Housing and Development Board');
 INSERT INTO organisations(organisation_name) VALUES ('Ministry of Foreign Affairs');
+INSERT INTO organisations(organisation_name) VALUES ('Ministry of Health');
 
+
+INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+VALUES (1, 'medical leave', 2, '2019-08-01', '2019-08-03', 3, 'submitted');
+
+INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+VALUES (1, 'medical leave', 2, '2019-07-29', '2019-07-30', 2, 'approved');
 
 INSERT INTO calendar (calendar_date, calendar_desc, calendar_type, calendar_day, calendar_year) VALUES ('2019-08-09','national day','public holiday',2019,5);
 INSERT INTO calendar (calendar_date, calendar_desc, calendar_type, calendar_day, calendar_year) VALUES ('2019-08-10','saturday','weekend',2019,6);

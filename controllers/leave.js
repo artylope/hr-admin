@@ -7,17 +7,19 @@ module.exports = function (db){
    */
 
   let applyLeaveRequestHandler = async function(request, response){
+    console.log("apply leave")
       try {
+          console.log("apply leave inside try");
           let userId = request.cookies.user_id;
           let managerId = request.cookies.manager_id;
           let manager = await db.employees.getManager(managerId);
-
+          console.log(managerId);
           var data = {
                 'userId': userId,
                 'manager' : manager
           }
 
-          response.render('ApplyLeave',data);
+          response.render('applyleave',data);
       } catch(e) {
           console.log('applyLeaveRequestHandler: ' + e);
       }

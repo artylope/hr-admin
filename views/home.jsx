@@ -17,8 +17,13 @@ class Home extends React.Component {
                         <div className="table-col">{leave.staff_name}</div>
                         <div className="table-col capitalised">{leave.leave_type}</div>
                         {/*<div className="table-col">{leave.manager_id}</div>*/}
+<<<<<<< HEAD
                         <div className="table-col">{leave.date_start}</div>
                         <div className="table-col">{leave.date_end}</div>
+=======
+                        <div className="table-col">{leave.date_start.toDateString()}</div>
+                        <div className="table-col">{leave.date_end.toDateString()}</div>
+>>>>>>> master
                         <div className="table-col">{leave.days_count}</div>
                         <div className="table-col"><span className="badge">{leave.request_status}</span></div>
                         <div className="table-col"><a href={leaveToApproveURL} >View Request</a></div>
@@ -33,8 +38,13 @@ class Home extends React.Component {
                         <div className="table-col">{leave.staff_id}</div>
                         <div className="table-col capitalised">{leave.leave_type}</div>
                         <div className="table-col">{leave.manager_id}</div>
+<<<<<<< HEAD
                         <div className="table-col">{leave.date_start}</div>
                         <div className="table-col">{leave.date_end}</div>
+=======
+                        <div className="table-col">{leave.date_start.toDateString()}</div>
+                        <div className="table-col">{leave.date_end.toDateString()}</div>
+>>>>>>> master
                         <div className="table-col">{leave.days_count}</div>
                         <div className="table-col"><span className="badge">{leave.request_status}</span></div>
                         <div className="table-col"><a href={leaveAppliedURL} >View Request</a></div>

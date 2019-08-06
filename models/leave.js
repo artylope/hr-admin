@@ -18,12 +18,12 @@ module.exports = function (dbPoolInstance){
             const values = [userId];
 
             const queryString = `
-                                  SELECT leave.id, leave.staff_id, employees.staff_name, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status, leave.created_at, leave.updated_at
+                                  SELECT leave.id, leave.staff_id, employees.staff_name, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status
                                   FROM leave
                                   INNER JOIN employees
                                   ON (leave.staff_id = employees.id)
                                   WHERE leave.manager_id = $1
-                                  ORDER BY leave.updated_at DESC                                `;
+                                                            `;
 
             let result = await dbPoolInstance.query(queryString,values);
             return result.rows;
@@ -44,7 +44,7 @@ module.exports = function (dbPoolInstance){
             const queryString = `
                                   SELECT * FROM leave
                                   WHERE staff_id = $1
-                                  ORDER BY updated_at DESC
+
                                 `;
 
             let result = await dbPoolInstance.query(queryString,values);
@@ -60,12 +60,12 @@ module.exports = function (dbPoolInstance){
         try {
             console.log('in submit leave model');
             console.log(leave);
-            let createdAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
-            let updatedAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
-            const values = [userId, leave.leave_type, managerId, leave.date_start, leave.date_end, 3, leave.request_status, createdAt, updatedAt]
+            // let createdAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
+            // let updatedAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
+            const values = [userId, leave.leave_type, managerId, leave.date_start, leave.date_end, 3, leave.request_status]
             const queryString = `
-                                  INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status, created_at, updated_at)
-                                  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING ID;
+                                  INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+                                  VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING ID;
                                 `;
             let result = await dbPoolInstance.query(queryString,values);
             return result.rows;
@@ -82,7 +82,7 @@ module.exports = function (dbPoolInstance){
               console.log(leaveId);
               const values = [leaveId]
               const queryString = `
-                                    SELECT leave.id, leave.staff_id, employees.staff_name, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status, leave.created_at, leave.updated_at
+                                    SELECT leave.id, leave.staff_id, employees.staff_name, leave.leave_type, leave.manager_id, leave.date_start, leave.date_end, leave.days_count, leave.request_status
                                     FROM leave
                                     INNER JOIN employees
                                     ON (leave.staff_id = employees.id)
@@ -103,11 +103,11 @@ module.exports = function (dbPoolInstance){
               console.log('in update leave details');
               console.log(leaveId);
               console.log(reviewStatus);
-              let updatedAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
-              const values = [leaveId, reviewStatus, updatedAt]
+              // let updatedAt = moment().tz("Asia/Singapore").format('YYYY-MM-DD hh:mm:ss');
+              const values = [leaveId, reviewStatus]
               const queryString = `
                                     UPDATE leave
-                                    SET request_status = $2, updated_at = $3
+                                    SET request_status = $2
                                     WHERE id = $1
                                     ;
                                   `;

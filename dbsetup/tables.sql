@@ -28,9 +28,7 @@ CREATE TABLE IF NOT EXISTS leave (
     date_start DATE,
     date_end DATE,
     days_count FLOAT,
-    request_status TEXT,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP
+    request_status TEXT
 );
 
 
