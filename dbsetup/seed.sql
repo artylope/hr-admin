@@ -102,7 +102,7 @@ INSERT INTO employees (username, password, staff_name, staff_email, staff_phone,
 INSERT INTO employees (username, password, staff_name, staff_email, staff_phone, organisation_id) VALUES ('yvonneteo','password','Yvonne Teo','yvonneteo@email.com','62113199',5);
 
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (1, 2);
-INSERT INTO manager_staff(staff_id, manager_id) VALUES (2, 2);
+INSERT INTO manager_staff(staff_id, manager_id) VALUES (2, 3);
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (3, 2);
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (4, 2);
 INSERT INTO manager_staff(staff_id, manager_id) VALUES (5, 2);
@@ -144,8 +144,11 @@ INSERT INTO organisations(organisation_name) VALUES ('Ministry of Foreign Affair
 INSERT INTO organisations(organisation_name) VALUES ('Ministry of Health');
 
 
--- INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status, created_at, updated_at)
--- VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted', '2019-08-02 10:00:09', '2019-08-02 10:00:09') ;
+INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+VALUES (1, 'medical leave', 2, '2019-08-01', '2019-08-03', 3, 'submitted');
 
 INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
-VALUES (2, 'medical leave', 2, '2019-08-01', '2019-08-03', 1, 'submitted') ;
+VALUES (1, 'medical leave', 2, '2019-07-29', '2019-07-30', 2, 'approved');
+
+INSERT INTO leave (staff_id, leave_type, manager_id, date_start, date_end, days_count, request_status)
+VALUES (1, 'medical leave', 2, '2019-07-21', '2019-07-22', 2, 'rejected');
